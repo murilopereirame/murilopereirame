@@ -1,0 +1,45 @@
+.projectItem {
+  border: 1px solid white;
+  display: flex;  
+}
+
+.projectItem .overlay {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .overlay {
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+    transform: translate(0%, -100%);
+  }
+  
+  .overlay button {
+    background-color: transparent;
+    border: 1px solid #D1AC00;
+    color: #D1AC00;
+    padding: 1rem;
+  }
+  
+  .projectItem:hover .image {
+    opacity: 0.2;
+  }
+  
+  .projectItem:hover .overlay {
+    width: 100%;
+    height: 100% !important;
+    opacity: 0.8;
+    background-color: #0C1618;
+    transform: translate(0%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .projectItem:hover .overlay button {
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+}

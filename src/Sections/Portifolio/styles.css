@@ -1,0 +1,26 @@
+.portfolioContainer {    
+    width: 100vw;
+    height: 100vh;
+    background-color: #0C1618;     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.portfolioContainer p {
+    font-family: 'Roboto' sans-serif;
+    color: #FAF4D3;
+    font-weight: bold;
+    font-size: 2rem;
+    
+}
