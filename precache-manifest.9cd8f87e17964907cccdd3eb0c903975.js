@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4b2e7bc2c34b00d4ec81f1dfe28c22d",
+    "revision": "1092a56d8600b1efdb126ff8da355288",
     "url": "https://murilopereira.dev.br/index.html"
   },
   {
-    "revision": "e40a13bc19b491da264c",
-    "url": "https://murilopereira.dev.br/static/css/main.573433b1.chunk.css"
+    "revision": "4128874b343368156d90",
+    "url": "https://murilopereira.dev.br/static/css/main.8e2d4daf.chunk.css"
   },
   {
     "revision": "a4aa4753096588fb164b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e40a13bc19b491da264c",
-    "url": "https://murilopereira.dev.br/static/js/main.32e2a827.chunk.js"
+    "revision": "4128874b343368156d90",
+    "url": "https://murilopereira.dev.br/static/js/main.2b58c11a.chunk.js"
   },
   {
     "revision": "b8594fb79ef7d43fc90a",
