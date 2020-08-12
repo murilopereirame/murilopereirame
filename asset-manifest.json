@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://murilopereira.dev.br/static/css/main.8e2d4daf.chunk.css",
-    "main.js": "https://murilopereira.dev.br/static/js/main.9f94cc60.chunk.js",
-    "main.js.map": "https://murilopereira.dev.br/static/js/main.9f94cc60.chunk.js.map",
+    "main.js": "https://murilopereira.dev.br/static/js/main.c7f689e2.chunk.js",
+    "main.js.map": "https://murilopereira.dev.br/static/js/main.c7f689e2.chunk.js.map",
     "runtime-main.js": "https://murilopereira.dev.br/static/js/runtime-main.577e7e0f.js",
     "runtime-main.js.map": "https://murilopereira.dev.br/static/js/runtime-main.577e7e0f.js.map",
     "static/js/2.925fc899.chunk.js": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js",
     "static/js/2.925fc899.chunk.js.map": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js.map",
     "index.html": "https://murilopereira.dev.br/index.html",
-    "precache-manifest.70951891929173678a09f5ab50821f87.js": "https://murilopereira.dev.br/precache-manifest.70951891929173678a09f5ab50821f87.js",
+    "precache-manifest.ab25cf35d33ac526d51246a294886977.js": "https://murilopereira.dev.br/precache-manifest.ab25cf35d33ac526d51246a294886977.js",
     "service-worker.js": "https://murilopereira.dev.br/service-worker.js",
     "static/css/main.8e2d4daf.chunk.css.map": "https://murilopereira.dev.br/static/css/main.8e2d4daf.chunk.css.map",
     "static/js/2.925fc899.chunk.js.LICENSE.txt": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js.LICENSE.txt",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.577e7e0f.js",
     "static/js/2.925fc899.chunk.js",
     "static/css/main.8e2d4daf.chunk.css",
-    "static/js/main.9f94cc60.chunk.js"
+    "static/js/main.c7f689e2.chunk.js"
   ]
 }
