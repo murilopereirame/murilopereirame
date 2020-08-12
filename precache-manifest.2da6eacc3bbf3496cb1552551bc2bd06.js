@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19cb76184435aa573b21a9af4d281772",
+    "revision": "a4b2e7bc2c34b00d4ec81f1dfe28c22d",
     "url": "https://murilopereira.dev.br/index.html"
   },
   {
-    "revision": "4572546560a163f9bcce",
-    "url": "https://murilopereira.dev.br/static/css/main.6a1fbd14.chunk.css"
+    "revision": "e40a13bc19b491da264c",
+    "url": "https://murilopereira.dev.br/static/css/main.573433b1.chunk.css"
   },
   {
-    "revision": "0f0b7a08f71ce161fc7b",
-    "url": "https://murilopereira.dev.br/static/js/2.4e731bb2.chunk.js"
+    "revision": "a4aa4753096588fb164b",
+    "url": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js"
   },
   {
     "revision": "216e537bacc64f9dbaabd26649a9ab95",
-    "url": "https://murilopereira.dev.br/static/js/2.4e731bb2.chunk.js.LICENSE.txt"
+    "url": "https://murilopereira.dev.br/static/js/2.925fc899.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4572546560a163f9bcce",
-    "url": "https://murilopereira.dev.br/static/js/main.59447029.chunk.js"
+    "revision": "e40a13bc19b491da264c",
+    "url": "https://murilopereira.dev.br/static/js/main.32e2a827.chunk.js"
   },
   {
     "revision": "b8594fb79ef7d43fc90a",
