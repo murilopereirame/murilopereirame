@@ -1,0 +1,23 @@
+export const PT_BR = {
+    intro_hi: "Olá! Me chamo <span className='name'>Murilo Pereira</span>",
+    intro_work: "Trabalho com:",
+    intro_check: "Confira meu trabalho",
+    about_me: "Estudante de Ciência da Computação na Unesp de Presidente Prudente, sou um entusiasta da tecnologia. Desde muito jovem tive contato com linguagens de programação, como&nbsp;<span className=\"bold\">VB .NET,&nbsp;</span><span className=\"bold\">C#&nbsp;</span>e <span className=\"bold\">PHP&nbsp;</span>. Durante a faculdade encontrei novos desafios, onde pude ter o contato com <span className=\"bold\">Node.JS,&nbsp;</span><span className=\"bold\">Java,&nbsp;</span><span className=\"bold\">Flutter, </span><span className=\"bold\">React Native.</span>",
+    info_lines: "Linhas de código",
+    info_projects: "Projetos",
+    info_coffe: "Xícaras de café",
+    portifolio_title: "P O R T I F Ó L I O",
+    portifloio_more: "Saiba mais",
+    contact_title: "C O N T A T O",
+    contact_name: "Qual seu nome?",
+    contact_email: "Qual seu email?",
+    contact_idea: "Fale sobre sua ideia",
+    contact_label_name: "Nome",
+    contact_label_email: "Email",
+    contact_label_idea: "Diga o que quiser em 300 caracteres",
+    contact_message_success: "Mensagem enviada com sucesso!",
+    contact_message_err500: "Oops... Houve um erro. Tente novamente em instantes",
+    contact_message_error: "Erro no envio!",
+    contact_button: "ENVIAR",
+    footer_rights: "Todos os direitos reservados"
+}
