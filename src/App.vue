@@ -1,17 +1,23 @@
 <template>
   <Header />
   <Portifolio />
+  <Experience />
+  <Contact />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Header from "./sections/Header.vue";
 import Portifolio from "./sections/Portifolio.vue";
+import Experience from "./sections/Experience.vue";
+import Contact from "./sections/Contact.vue";
 
 @Options({
   components: {
     Header,
     Portifolio,
+    Experience,
+    Contact,
   },
 })
 export default class App extends Vue {}
