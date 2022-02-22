@@ -99,7 +99,7 @@ export default class Contact extends Vue {}
         color: #1d1d1b;
         width: 100%;
         font-family: Avenir, Helvetica, Arial, sans-serif;
-        margin-top: 0.25rem;
+        margin-top: 0.5rem;
         padding: 0.35rem 0.25rem;
       }
 
@@ -111,6 +111,50 @@ export default class Contact extends Vue {}
       textarea::placeholder {
         color: #1d1d1b;
         font-weight: bold;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .C-Wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > p {
+        font-size: 3.25rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 575px;
+
+        input,
+        textarea {
+          font-size: 1.15rem;
+        }
+
+        textarea {
+          height: 175px;
+        }
+      }
+
+      button {
+        font-size: 1.1rem;
+      }
+
+      .C-Info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -0.25rem;
+
+        a {
+          font-size: 1.1rem;
+        }
       }
     }
   }

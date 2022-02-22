@@ -69,4 +69,22 @@ export default class Experience extends Vue {}
     margin: 3rem 0 0.75rem 0;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .E-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > p {
+      font-size: 3.25rem;
+    }
+
+    .E-Grid {
+      max-width: 680px;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding-left: 0.75rem;
+    }
+  }
+}
 </style>

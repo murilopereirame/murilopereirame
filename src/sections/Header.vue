@@ -53,4 +53,20 @@ export default class Header extends Vue {}
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .Header,
+  .H-Wrapper {
+    img {
+      width: 25rem;
+    }
+
+    .H-W-Social {
+      img {
+        width: 2.5rem;
+        height: auto;
+      }
+    }
+  }
+}
 </style>

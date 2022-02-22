@@ -68,4 +68,24 @@ export default class Portifolio extends Vue {}
     margin: 3rem 0 0.75rem 0;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .P-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > p {
+      font-size: 3.25rem;
+    }
+
+    .P-Jobs {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .P-Jobs-Wrapper {
+      max-width: 680px;
+    }
+  }
+}
 </style>

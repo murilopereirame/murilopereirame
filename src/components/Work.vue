@@ -46,5 +46,16 @@ export default class Work extends Vue {}
   .W-Techs {
     font-size: 1rem;
   }
+
+  @media only screen and (min-width: 768px) {
+    .W-Employer {
+      font-size: 1.35rem;
+    }
+    .W-Period,
+    .W-Title,
+    .W-Techs {
+      font-size: 1.1rem;
+    }
+  }
 }
 </style>

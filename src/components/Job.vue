@@ -89,7 +89,7 @@ export default class Job extends Vue {}
         padding: 0.05rem 0.75rem;
         border-radius: 0.25rem;
         font-size: 0.75rem;
-        font-weight: 400;
+        font-weight: 300;
       }
 
       .J-Tech:last-child {
@@ -98,11 +98,28 @@ export default class Job extends Vue {}
 
       > span {
         font-size: 0.75rem;
+        font-weight: 300;
       }
 
       > p {
         font-weight: 500;
         font-size: 1.75rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .J-Overlay {
+      .J-O-Wrapper {
+        > span,
+        .J-Tech {
+          font-size: 1.1rem;
+        }
+
+        > p {
+          font-weight: 500;
+          font-size: 2.25rem;
+        }
       }
     }
   }
