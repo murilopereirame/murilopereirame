@@ -158,5 +158,15 @@ export default class Contact extends Vue {}
       }
     }
   }
+
+  @media only screen and (min-width: 1280px) {
+    .C-Wrapper {
+      margin-bottom: 1rem;
+
+      > p {
+        margin: 2.75rem 0 1.5rem 0;
+      }
+    }
+  }
 }
 </style>

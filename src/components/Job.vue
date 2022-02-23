@@ -48,6 +48,7 @@ export default class Job extends Vue {}
 
     img {
       width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -121,6 +122,12 @@ export default class Job extends Vue {}
           font-size: 2.25rem;
         }
       }
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .J-Wrapper {
+      max-height: 400px;
     }
   }
 }

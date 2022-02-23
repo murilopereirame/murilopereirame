@@ -43,4 +43,16 @@ export default class Timeline extends Vue {}
 .Active {
   background-color: #186c5f;
 }
+
+@media only screen and (min-width: 1280px) {
+  .Year {
+    padding: 1rem 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+
+    span {
+      font-size: 1.35rem;
+    }
+  }
+}
 </style>

@@ -87,4 +87,27 @@ export default class Experience extends Vue {}
     }
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  .E-Wrapper {
+    > p {
+      font-size: 3.25rem;
+      margin: 2.75rem 0 1.5rem 0;
+    }
+
+    .E-Grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 1.5rem;
+      max-width: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .E-Wrapper {
+    > p {
+      margin: 3.5rem 0 1.5rem 0;
+    }
+  }
+}
 </style>

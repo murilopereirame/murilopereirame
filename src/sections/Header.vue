@@ -7,6 +7,10 @@
         <img src="@/assets/linkedin.svg" alt="LinkedIn Murilo Pereira" />
       </div>
     </div>
+    <div class="H-Scroll">
+      <img src="@/assets/mouse.svg" alt="Mouse Scroll" />
+      <p>Deslize para ver mais</p>
+    </div>
   </div>
 </template>
 
@@ -25,6 +29,24 @@ export default class Header extends Vue {}
 
 .Header {
   margin-top: 3rem;
+  .H-Scroll {
+    display: none;
+
+    img {
+      position: relative;
+      animation: scroll 1s infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes scroll {
+      from {
+        top: 0;
+      }
+      to {
+        top: 10px;
+      }
+    }
+  }
 }
 
 .Header,
@@ -59,6 +81,47 @@ export default class Header extends Vue {}
   .H-Wrapper {
     img {
       width: 25rem;
+    }
+
+    .H-W-Social {
+      img {
+        width: 2.5rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Header {
+    margin-top: 0rem;
+    position: relative;
+
+    .H-Scroll {
+      bottom: 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 2.5rem;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        color: #1b1c25;
+      }
+    }
+  }
+
+  .Header,
+  .H-Wrapper {
+    height: 100%;
+    height: 100vh;
+    img {
+      width: 35rem;
     }
 
     .H-W-Social {
