@@ -3,6 +3,7 @@
   <Portifolio />
   <Experience />
   <Contact />
+  <Footer />
 </template>
 
 <script lang="ts">
@@ -11,6 +12,7 @@ import Header from "./sections/Header.vue";
 import Portifolio from "./sections/Portifolio.vue";
 import Experience from "./sections/Experience.vue";
 import Contact from "./sections/Contact.vue";
+import Footer from "./sections/Footer.vue";
 
 @Options({
   components: {
@@ -18,6 +20,7 @@ import Contact from "./sections/Contact.vue";
     Portifolio,
     Experience,
     Contact,
+    Footer,
   },
 })
 export default class App extends Vue {}
@@ -30,6 +33,7 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #1f4068;
+  height: 100%;
 }
 
 body {
@@ -37,5 +41,11 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 </style>

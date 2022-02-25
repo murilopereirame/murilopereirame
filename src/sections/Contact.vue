@@ -1,22 +1,16 @@
 <template>
-  <div class="Contact">
+  <div class="Contact" id="form">
+    <Title text="CONTATO" />
     <div class="C-Wrapper">
-      <p>CONTATO</p>
       <form>
-        <input type="text" placeholder="NOME" aria-label="Digite seu nome" />
-        <input type="email" placeholder="EMAIL" aria-label="Digite seu email" />
-        <textarea aria-label="Digite sua mensagem" placeholder="MENSAGEM...." />
-        <div class="C-From-Footer">
-          <div class="C-Info">
-            <a
-              href="mailto:contato@murilopereira.dev.br"
-              aria-label="Enviar email"
-              >contato@murilopereira.dev.br</a
-            >
-            <a href="callto:+5518981892681" aria-label="Ligar para celular"
-              >+55 (18) 98189-2681</a
-            >
-          </div>
+        <input type="text" placeholder="Nome" aria-label="Digite seu nome" />
+        <input
+          type="email"
+          placeholder="E-mail"
+          aria-label="Digite seu email"
+        />
+        <textarea aria-label="Digite sua mensagem" placeholder="Mensagem" />
+        <div class="C-Form-Footer">
           <button type="submit">ENVIAR</button>
         </div>
       </form>
@@ -25,43 +19,41 @@
 </template>
 
 <script>
-import { Vue } from "vue-class-component";
+import { Options, Vue } from "vue-class-component";
+import Title from "../components/Title.vue";
 
+@Options({
+  components: { Title },
+})
 export default class Contact extends Vue {}
 </script>
 
 <style scoped lang="scss">
 .Contact {
   .C-Wrapper {
-    margin-bottom: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    > p {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 0.5rem;
-      margin: 3rem 0 0.75rem 0;
-    }
-
-    .C-From-Footer {
+    .C-Form-Footer {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-between;
+      justify-content: center;
       width: 100%;
-      margin-top: 0.5rem;
+      margin-top: 1.25rem;
 
       button {
         border: none;
         background-color: #186c5f;
         color: #ebecf1;
 
-        padding: 0.35rem 1.5rem;
-        border-radius: 0.25rem;
-        margin-right: -0.25rem;
+        padding: 0.25rem 2.25rem;
+        font-size: 1.15rem;
+        display: flex;
+        align-items: center;
       }
 
       padding: 0 0.25rem;
@@ -94,13 +86,14 @@ export default class Contact extends Vue {}
       input,
       textarea {
         border: none;
-        background-color: rgba(24, 108, 95, 0.1);
+        background-color: #fff;
+        color: #575756;
+        font-weight: 300;
         border-radius: 0.15rem;
-        color: #1d1d1b;
         width: 100%;
         font-family: Avenir, Helvetica, Arial, sans-serif;
         margin-top: 0.5rem;
-        padding: 0.35rem 0.25rem;
+        padding: 0.5rem 0.5rem;
       }
 
       textarea {

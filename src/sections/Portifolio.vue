@@ -1,49 +1,82 @@
 <template>
-  <div class="Portifolio">
-    <p>PORTIFOLIO</p>
+  <div class="Portifolio" id="portifolio">
+    <Title text="PORTIFÓLIO" />
     <div class="P-Wrapper">
       <div class="P-Jobs-Wrapper">
-        <Timeline />
         <div class="P-Jobs">
-          <Job
-            title="JS Maia"
-            v-bind:techs="['ReactJS', 'NodeJS']"
-            year="2021"
-            image="https://murilopereira.dev.br/static/media/jsmaia.995880cf.png"
-          />
-          <Job
-            title="JS Maia"
-            v-bind:techs="['ReactJS', 'NodeJS']"
-            year="2021"
-            image="https://murilopereira.dev.br/static/media/jsmaia.995880cf.png"
-          />
-          <Job
-            title="JS Maia"
-            v-bind:techs="['ReactJS', 'NodeJS']"
-            year="2021"
-            image="https://murilopereira.dev.br/static/media/jsmaia.995880cf.png"
-          />
-          <Job
-            title="JS Maia"
-            v-bind:techs="['ReactJS', 'NodeJS']"
-            year="2021"
-            image="https://murilopereira.dev.br/static/media/jsmaia.995880cf.png"
-          />
+          <Carousel v-bind:items-to-show="1">
+            <Slide v-for="(job, index) in jobs" :key="`item-${index}`">
+              <Job
+                v-touch:swipe.left="next"
+                v-touch:swipe.right="prev"
+                :title="job.title"
+                :techs="job.techs"
+                :year="job.year"
+                :image="job.image"
+              />
+            </Slide>
+          </Carousel>
         </div>
       </div>
+      <Swipe />
+      <Timeline />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import "vue3-carousel/dist/carousel.css";
+//@ts-ignore
+import { Carousel, Slide } from "vue3-carousel";
+
 import Timeline from "../components/Timeline.vue";
 import Job from "../components/Job.vue";
+import Title from "../components/Title.vue";
+import Swipe from "../components/Swipe.vue";
 
 @Options({
   components: {
     Timeline,
     Job,
+    Title,
+    Swipe,
+    Carousel,
+    Slide,
+  },
+  data() {
+    return {
+      jobs: [
+        {
+          title: "JS Maia",
+          techs: ["ReactJS", "NodeJS"],
+          year: "2021",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
+          title: "JS SSSS",
+          techs: ["ReactJS", "NodeJS"],
+          year: "2022",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
+          title: "JS SSSS",
+          techs: ["ReactJS", "NodeJS"],
+          year: "2022",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
+          title: "JS SSSS",
+          techs: ["ReactJS", "NodeJS"],
+          year: "2022",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+      ],
+    };
   },
 })
 export default class Portifolio extends Vue {}
@@ -51,23 +84,34 @@ export default class Portifolio extends Vue {}
 
 <style scoped lang="scss">
 .Portifolio {
-  > p {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    margin: 3rem 0 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+
+  .carousel__slide--next {
+    margin-left: 0.5rem;
+  }
+
+  .carousel__slide--prev {
+    padding-right: 0.5rem;
   }
 
   .P-Wrapper {
     .P-Jobs {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto auto;
       row-gap: 0.5rem;
       column-gap: 0.5rem;
       margin-top: 1.25rem;
-      padding: 0 0.5rem;
+      padding-left: 0.5rem;
       justify-items: center;
     }
+  }
+
+  .P-Jobs-Wrapper {
+    margin-bottom: 1rem;
   }
 }
 

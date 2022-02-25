@@ -2,10 +2,13 @@
   <div class="Header">
     <div class="H-Wrapper">
       <img src="@/assets/logo.svg" alt="Logo Murilo Pereira" />
-      <div class="H-W-Social">
-        <img src="@/assets/github.svg" alt="GitHub Murilo Pereira" />
-        <img src="@/assets/linkedin.svg" alt="LinkedIn Murilo Pereira" />
-      </div>
+    </div>
+    <div class="H-Nav">
+      <nav>
+        <a href="#portifolio">PORTIFÓLIO</a>
+        <a href="#exp">EXPERIÊNCIA</a>
+        <a href="#form">CONTATO</a>
+      </nav>
     </div>
     <div class="H-Scroll">
       <img src="@/assets/mouse.svg" alt="Mouse Scroll" />
@@ -22,13 +25,16 @@ export default class Header extends Vue {}
 <style lang="scss" scoped>
 .Header,
 .H-Wrapper,
-.H-W-Social {
+.H-W-Social,
+.H-Nav nav {
   display: flex;
   align-items: center;
 }
 
 .Header {
-  margin-top: 3rem;
+  position: relative;
+  height: 100%;
+
   .H-Scroll {
     display: none;
 
@@ -44,6 +50,28 @@ export default class Header extends Vue {}
       }
       to {
         top: 10px;
+      }
+    }
+  }
+
+  .H-Nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    nav {
+      width: 100%;
+      justify-content: space-evenly;
+      padding-bottom: 1rem;
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #133f66;
+      }
+
+      a:nth-child(2n) {
+        color: #206a5d;
       }
     }
   }

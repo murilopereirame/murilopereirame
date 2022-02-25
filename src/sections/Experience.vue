@@ -1,72 +1,76 @@
 <template>
-  <div class="Experience">
+  <div class="Experience" id="exp">
+    <Title text="EXPERIÊNCIA" />
     <div class="E-Wrapper">
-      <p>EXPERIÊNCIA</p>
-      <div class="E-Grid">
-        <Work
-          employer="Gerenet Tecnologia"
-          v-bind:techs="['PHP', 'HTML', 'CSS', 'JS']"
-          startDate="05/2019"
-          endDate="12/2019"
-          title="Estagiário Fullstack"
-        />
-        <Work
-          employer="P.M. Presidente Prudente"
-          v-bind:techs="['PHP', 'Flutter', 'ReactJS']"
-          startDate="01/2020"
-          endDate="06/2021"
-          title="Estagiário Fullstack"
-        />
-        <Work
-          employer="Gerenet Tecnologia"
-          v-bind:techs="['PHP', 'HTML', 'CSS', 'JS']"
-          startDate="03/2020"
-          endDate="07/2021"
-          title="Desenvolvedor Fullstack"
-        />
-        <Work
-          employer="Compass UOL"
-          v-bind:techs="['React-Native']"
-          startDate="07/2021"
-          endDate="Hoje"
-          title="Desenvolvedor Mobile"
-        />
+      <div class="E-Carousel">
+        <Carousel :items-to-show="1" :items-to-scroll="1">
+          <Slide v-for="(work, index) in works" :key="`item-${index}`">
+            <Work
+              :employer="work.employer"
+              :techs="work.techs"
+              :startDate="work.startDate"
+              :endDate="work.endDate"
+              :title="work.title"
+            />
+          </Slide>
+        </Carousel>
       </div>
+      <Swipe />
     </div>
   </div>
 </template>
 
 <script>
 import { Options, Vue } from "vue-class-component";
+import "vue3-carousel/dist/carousel.css";
+//@ts-ignore
+import { Carousel, Slide } from "vue3-carousel";
 import Work from "../components/Work.vue";
+import Title from "../components/Title.vue";
+import Swipe from "../components/Swipe.vue";
 
 @Options({
-  components: { Work },
+  components: { Work, Title, Swipe, Carousel, Slide },
+  data: () => ({
+    works: [
+      {
+        employer: "Gerenet Tecnologia",
+        techs: ["PHP", "HTML", "CSS", "JS"],
+        startDate: "2019",
+        endDate: "2021",
+        title: "Fullstack",
+      },
+      {
+        employer: "PREF. PRES. PRUDENTE",
+        techs: ["PHP", "React", "Flutter"],
+        startDate: "2020",
+        endDate: "2021",
+        title: "Fullstack",
+      },
+      {
+        employer: "Compass UOL",
+        techs: ["React-Native"],
+        startDate: "2021",
+        endDate: "Atual",
+        title: "Fullstack",
+      },
+    ],
+  }),
 })
 export default class Experience extends Vue {}
 </script>
 
 <style scoped lang="scss">
-.E-Wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.Experience {
+  .E-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  .E-Grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 1rem;
-    column-gap: 1rem;
-    justify-items: flex-start;
-    padding: 0 0.5rem;
-  }
-
-  > p {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    margin: 3rem 0 0.75rem 0;
+    .E-Carousel {
+      max-width: 100%;
+    }
   }
 }
 
@@ -79,12 +83,6 @@ export default class Experience extends Vue {}
     > p {
       font-size: 3.25rem;
     }
-
-    .E-Grid {
-      max-width: 680px;
-      grid-template-columns: 1fr 1fr 1fr;
-      padding-left: 0.75rem;
-    }
   }
 }
 
@@ -93,12 +91,6 @@ export default class Experience extends Vue {}
     > p {
       font-size: 3.25rem;
       margin: 2.75rem 0 1.5rem 0;
-    }
-
-    .E-Grid {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      column-gap: 1.5rem;
-      max-width: 90%;
     }
   }
 }

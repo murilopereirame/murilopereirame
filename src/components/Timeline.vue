@@ -3,11 +3,11 @@
     <div class="T-Wrapper">
       <div class="T-Line"></div>
       <div class="T-Years">
-        <Year year="18" active />
-        <Year year="19" />
-        <Year year="20" />
-        <Year year="21" />
-        <Year year="22" />
+        <Year year="2018" />
+        <Year year="2019" />
+        <Year year="2020" />
+        <Year year="2021" />
+        <Year year="2022" active />
       </div>
     </div>
   </div>
@@ -26,44 +26,32 @@ export default class Timeline extends Vue {}
 </script>
 
 <style lang="scss">
-.T-Years {
-  width: 100%;
-}
-
-.T-Line {
-  width: calc(100% - 1rem);
-}
-
-.T-Wrapper {
-  position: relative;
-  padding: 0 0.5rem;
-}
-
-.T-Line {
-  background-color: #c5c5c5;
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  bottom: 50%;
-  margin: 0 auto;
-  z-index: 0;
-}
-
-.T-Years {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.T-Years {
-  .Year {
-    margin-right: 1rem;
+.Timeline {
+  .T-Years {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-between;
   }
 
-  .Year:last-of-type {
-    margin-right: 0;
-    margin-left: auto;
+  .T-Line {
+    width: calc(100% - 2rem);
+  }
+
+  .T-Wrapper {
+    position: relative;
+    padding: 0 0.5rem;
+  }
+
+  .T-Line {
+    background-color: #c5c5c5;
+    height: 2px;
+    position: absolute;
+    top: 0.75rem;
+    margin: 0 auto;
+    z-index: 0;
   }
 }
 
