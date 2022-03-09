@@ -8,8 +8,10 @@
     </div>
     <div class="J-Overlay">
       <div class="J-O-Wrapper">
-        <span>{{ year }}</span>
-        <p>{{ title }}</p>
+        <div class="J-Info">
+          <span>{{ year }}</span>
+          <p>{{ title }}</p>
+        </div>
         <div class="J-O-Techs">
           <div class="J-Tech" v-for="tech in techs" :key="tech">
             {{ tech }}
@@ -29,6 +31,7 @@ import { Options, Vue } from "vue-class-component";
     techs: Array,
     year: String,
     image: String,
+    active: Boolean,
   },
 })
 export default class Job extends Vue {}
@@ -38,13 +41,12 @@ export default class Job extends Vue {}
 .Job {
   background-color: #1f4068;
   color: #ebecf1;
-  border-radius: 0.25rem;
   position: relative;
   max-width: 100%;
 
   .J-Wrapper {
     display: flex;
-    padding: 0.5rem;
+    padding: 0.25rem;
 
     img {
       width: 100%;
@@ -59,59 +61,74 @@ export default class Job extends Vue {}
     width: 100%;
     height: 100%;
 
-    border-radius: 0.25rem;
-    background-color: rgba(24, 108, 95, 0.8);
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
 
     .J-O-Wrapper {
-      padding: 0.5rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-end;
+      justify-content: center;
+      width: 100%;
 
       p {
         margin: 0;
+      }
+
+      .J-Info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.15rem 0.5rem;
+
+        > p {
+          font-weight: 700;
+          font-size: 2rem;
+          margin: 0;
+          line-height: 2.25rem;
+        }
+
+        > span {
+          font-size: 1.15rem;
+          font-weight: 300;
+        }
       }
 
       .J-O-Techs {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        padding: 0rem 0.5rem;
+        padding-bottom: 0.4rem;
       }
 
       .J-Tech {
-        background-color: #1d1d1b;
+        background-color: #133f66;
         margin-right: 0.5rem;
         padding: 0.05rem 0.75rem;
-        border-radius: 0.25rem;
-        font-size: 0.75rem;
+        font-size: 0.9rem;
         font-weight: 300;
       }
 
       .J-Tech:last-child {
         margin-right: 0;
       }
-
-      > span {
-        font-size: 0.75rem;
-        font-weight: 300;
-      }
-
-      > p {
-        font-weight: 500;
-        font-size: 1.75rem;
-      }
     }
   }
 
   @media only screen and (min-width: 768px) {
+    .J-Wrapper {
+      max-height: calc(100% - 0.5rem);
+    }
+
     .J-Overlay {
       .J-O-Wrapper {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+
         > span,
         .J-Tech {
           font-size: 1.1rem;
@@ -122,12 +139,6 @@ export default class Job extends Vue {}
           font-size: 2.25rem;
         }
       }
-    }
-  }
-
-  @media only screen and (min-width: 1920px) {
-    .J-Wrapper {
-      max-height: 400px;
     }
   }
 }

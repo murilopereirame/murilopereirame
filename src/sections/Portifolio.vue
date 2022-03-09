@@ -1,25 +1,30 @@
 <template>
   <div class="Portifolio" id="portifolio">
-    <Title text="PORTIFÓLIO" />
+    <Title text="PORTIFÓLIO" @click="teste" />
     <div class="P-Wrapper">
-      <div class="P-Jobs-Wrapper">
-        <div class="P-Jobs">
-          <Carousel v-bind:items-to-show="1">
-            <Slide v-for="(job, index) in jobs" :key="`item-${index}`">
-              <Job
-                v-touch:swipe.left="next"
-                v-touch:swipe.right="prev"
-                :title="job.title"
-                :techs="job.techs"
-                :year="job.year"
-                :image="job.image"
-              />
-            </Slide>
-          </Carousel>
+      <div class="P-Swipe">
+        <div
+          class="P-Jobs"
+          v-touch:swipe.left="next"
+          v-touch:swipe.right="prev"
+        >
+          <TransitionGroup name="Job-Transition">
+            <Job
+              v-for="(job, index) in jobs"
+              :key="`item-${index}`"
+              :title="job.title"
+              :techs="job.techs"
+              :year="job.year"
+              :image="job.image"
+              v-show="shouldShow(index)"
+            />
+          </TransitionGroup>
         </div>
       </div>
       <Swipe />
-      <Timeline />
+      <div class="TL-Wrapper">
+        <Timeline />
+      </div>
     </div>
   </div>
 </template>
@@ -44,34 +49,87 @@ import Swipe from "../components/Swipe.vue";
     Carousel,
     Slide,
   },
-  data() {
+  methods: {
+    prev() {
+      const steps = this.calculateAvaliableSpaces();
+      if (this.selectedJob === 0) this.selectedJob = this.jobs.length - steps;
+      else if (this.selectedJob - steps < 0) this.selectedJob = 0;
+      else this.selectedJob -= steps;
+    },
+    next() {
+      const steps = this.calculateAvaliableSpaces();
+      if (
+        this.selectedJob === this.jobs.length ||
+        this.selectedJob + steps >= this.jobs.length
+      )
+        this.selectedJob = 0;
+      else if (this.selectedJob + steps >= this.jobs.length)
+        this.selectedJob = this.jobs.length - this.selectedJob + 1;
+      else this.selectedJob += steps;
+    },
+    calculateAvaliableSpaces() {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 720) return 1;
+      else if (windowWidth < 1280) return 2;
+      else return 4;
+    },
+    shouldShow(index: number) {
+      const avaliableSpaces = this.calculateAvaliableSpaces();
+      return (
+        index >= this.selectedJob && index < this.selectedJob + avaliableSpaces
+      );
+    },
+  },
+  data: () => {
     return {
+      selectedJob: 0,
       jobs: [
         {
+          title: "Organ",
+          techs: ["Flutter", "Dart"],
+          year: "2020",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
+          title: "Balbino Shop",
+          techs: ["HTML", "CSS", "JS", "Tray Corp"],
+          year: "2020",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
+          title: "SafyPet",
+          techs: ["ReactJS", "TypeScript", "PHP"],
+          year: "2020",
+          image:
+            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
+        },
+        {
           title: "JS Maia",
-          techs: ["ReactJS", "NodeJS"],
+          techs: ["ReactJS", "TypeScript", "PHP"],
           year: "2021",
           image:
             "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
         },
         {
-          title: "JS SSSS",
-          techs: ["ReactJS", "NodeJS"],
-          year: "2022",
+          title: "Felicidade A2",
+          techs: ["ReactJS", "TypeScript"],
+          year: "2021",
           image:
             "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
         },
         {
-          title: "JS SSSS",
-          techs: ["ReactJS", "NodeJS"],
-          year: "2022",
+          title: "Sueca Brasileira",
+          techs: ["Java"],
+          year: "2021",
           image:
             "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
         },
         {
-          title: "JS SSSS",
-          techs: ["ReactJS", "NodeJS"],
-          year: "2022",
+          title: "Eletromed",
+          techs: ["ReactJS", "TypeScript", "PHP"],
+          year: "2021",
           image:
             "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
         },
@@ -90,23 +148,62 @@ export default class Portifolio extends Vue {}
   align-items: center;
   margin: 2rem 0;
 
-  .carousel__slide--next {
-    margin-left: 0.5rem;
+  .P-Swipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .carousel__slide--prev {
-    padding-right: 0.5rem;
+  .TL-Wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Job-Transition-enter-active {
+    transition: all 1.5s ease-in-out;
+  }
+
+  .Job-Transition-leave-active {
+    transition: all 1.2s ease-out;
+    display: none;
+    max-width: 80%;
+  }
+
+  .Job-Transition-enter-from {
+    opacity: 0.15;
+  }
+
+  .Job-Transition-leave-to {
+    opacity: 0.25;
   }
 
   .P-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .P-Jobs {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: auto;
       row-gap: 0.5rem;
       column-gap: 0.5rem;
       margin-top: 1.25rem;
       padding-left: 0.5rem;
       justify-items: center;
+      max-width: 80%;
+      cursor: pointer;
+      user-select: none;
+
+      .Job {
+        top: 0;
+      }
+    }
+
+    .Timeline {
+      margin-top: 0.5rem;
+      width: 80%;
     }
   }
 
@@ -122,8 +219,12 @@ export default class Portifolio extends Vue {}
       flex-direction: column;
       align-items: center;
 
+      .carousel__track {
+        display: grid;
+      }
+
       .P-Jobs {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 20rem;
       }
 
       .P-Jobs-Wrapper {
@@ -139,7 +240,7 @@ export default class Portifolio extends Vue {}
 
 @media only screen and (min-width: 1280px) {
   .Portifolio {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 
     .P-Wrapper {
@@ -148,7 +249,6 @@ export default class Portifolio extends Vue {}
       align-items: center;
       justify-content: center;
       height: 100%;
-      max-height: 100vh;
 
       > p {
         font-size: 3.25rem;
@@ -157,14 +257,17 @@ export default class Portifolio extends Vue {}
       .P-Jobs {
         max-height: 100%;
         margin-top: 0;
-        margin-left: 1.5rem;
-        grid-template-columns: auto auto auto;
-        grid-auto-rows: minmax(min-content, max-content);
+        margin-left: 0rem;
+        grid-template-columns: auto auto;
+        grid-auto-rows: 17.5rem 17.5rem;
+        row-gap: 1.5rem;
+        column-gap: 1.5rem;
         overflow: hidden;
+        padding-left: 0rem;
+        max-width: 90%;
       }
 
       .P-Jobs-Wrapper {
-        max-height: 100%;
         display: flex;
         flex-direction: row;
         max-width: 90%;
@@ -182,7 +285,7 @@ export default class Portifolio extends Vue {}
   .Portifolio {
     .P-Wrapper {
       .P-Jobs {
-        grid-template-columns: auto auto;
+        grid-auto-columns: auto auto;
       }
     }
   }

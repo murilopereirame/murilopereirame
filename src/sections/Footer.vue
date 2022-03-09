@@ -61,5 +61,25 @@ export default class Footer extends Vue {}
       }
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .F-Wrapper {
+      > img {
+        width: 15rem;
+      }
+
+      .F-Contact {
+        a {
+          font-size: 1.25rem;
+        }
+      }
+
+      .F-Social {
+        img {
+          width: 3rem;
+        }
+      }
+    }
+  }
 }
 </style>

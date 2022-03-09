@@ -86,35 +86,35 @@ export default class Header extends Vue {}
     width: 20rem;
     height: auto;
   }
-
-  .H-W-Social {
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    margin-top: 0.5rem;
-
-    img {
-      width: 2rem;
-      height: auto;
-    }
-
-    img:first-child {
-      margin-right: 5px;
-    }
-  }
 }
 
 @media only screen and (min-width: 768px) {
   .Header,
   .H-Wrapper {
     img {
-      width: 25rem;
+      width: 30rem;
     }
 
-    .H-W-Social {
-      img {
-        width: 2.5rem;
-        height: auto;
+    .H-Nav {
+      top: 0;
+      padding-top: 1rem;
+      margin-right: 1.5rem;
+
+      nav {
+        justify-content: flex-end;
+        padding-bottom: 1rem;
+
+        a {
+          font-size: 1.5rem;
+        }
+
+        a:nth-child(2n) {
+          margin: 0 1rem;
+        }
+
+        a:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -150,13 +150,6 @@ export default class Header extends Vue {}
     height: 100vh;
     img {
       width: 35rem;
-    }
-
-    .H-W-Social {
-      img {
-        width: 2.5rem;
-        height: auto;
-      }
     }
   }
 }

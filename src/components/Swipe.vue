@@ -45,4 +45,16 @@ export default class Swipe extends Vue {}
     width: 2rem;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .Swipe {
+    p {
+      font-size: 1.25rem;
+    }
+
+    img {
+      width: 2rem;
+    }
+  }
+}
 </style>

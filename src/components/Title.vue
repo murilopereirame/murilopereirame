@@ -40,6 +40,43 @@ export default class Title extends Vue {}
     z-index: 2;
     font-size: 2rem;
     letter-spacing: 2.5px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Title {
+    .T-Back {
+      font-size: 5.5rem;
+    }
+
+    .T-Front {
+      font-size: 3.75rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Title {
+    .T-Back {
+      font-size: 7.5rem;
+    }
+
+    .T-Front {
+      font-size: 5.75rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .Title {
+    .T-Back {
+      font-size: 8.5rem;
+    }
+
+    .T-Front {
+      font-size: 6.75rem;
+    }
   }
 }
 </style>

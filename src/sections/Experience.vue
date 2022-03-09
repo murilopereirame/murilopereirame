@@ -3,17 +3,20 @@
     <Title text="EXPERIÊNCIA" />
     <div class="E-Wrapper">
       <div class="E-Carousel">
-        <Carousel :items-to-show="1" :items-to-scroll="1">
-          <Slide v-for="(work, index) in works" :key="`item-${index}`">
-            <Work
-              :employer="work.employer"
-              :techs="work.techs"
-              :startDate="work.startDate"
-              :endDate="work.endDate"
-              :title="work.title"
-            />
-          </Slide>
-        </Carousel>
+        <TransitionGroup name="Exp-Transition">
+          <Work
+            v-for="(work, index) in works"
+            :key="`item-${index}`"
+            v-touch:swipe.left="next"
+            v-touch:swipe.right="prev"
+            :employer="work.employer"
+            :techs="work.techs"
+            :startDate="work.startDate"
+            :endDate="work.endDate"
+            :title="work.title"
+            v-show="index <= index + 4"
+          />
+        </TransitionGroup>
       </div>
       <Swipe />
     </div>
@@ -31,7 +34,19 @@ import Swipe from "../components/Swipe.vue";
 
 @Options({
   components: { Work, Title, Swipe, Carousel, Slide },
+  methods: {
+    prev() {
+      if (this.selectedExp === 0) this.selectedExp = this.works.length - 1;
+      else this.selectedExp -= 1;
+    },
+    next() {
+      if (this.selectedExp === this.works.length - 1)
+        this.selectedExp -= this.works.length - 1;
+      else this.selectedExp += 1;
+    },
+  },
   data: () => ({
+    selectedExp: 0,
     works: [
       {
         employer: "Gerenet Tecnologia",
@@ -52,7 +67,7 @@ import Swipe from "../components/Swipe.vue";
         techs: ["React-Native"],
         startDate: "2021",
         endDate: "Atual",
-        title: "Fullstack",
+        title: "Front-End",
       },
     ],
   }),
@@ -62,6 +77,25 @@ export default class Experience extends Vue {}
 
 <style scoped lang="scss">
 .Experience {
+  margin-top: 10rem;
+  .Exp-Transition-enter-active {
+    transition: all 1.5s ease-in-out;
+  }
+
+  .Exp-Transition-leave-active {
+    transition: all 1.2s ease-out;
+    position: absolute;
+    max-width: 80%;
+  }
+
+  .Exp-Transition-enter-from {
+    opacity: 0.25;
+  }
+
+  .Exp-Transition-leave-to {
+    opacity: 0.25;
+  }
+
   .E-Wrapper {
     display: flex;
     flex-direction: column;
@@ -70,6 +104,10 @@ export default class Experience extends Vue {}
 
     .E-Carousel {
       max-width: 100%;
+
+      .Work {
+        top: 0;
+      }
     }
   }
 }
@@ -92,6 +130,14 @@ export default class Experience extends Vue {}
       font-size: 3.25rem;
       margin: 2.75rem 0 1.5rem 0;
     }
+
+    .E-Carousel {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      column-gap: 1rem;
+      row-gap: 1rem;
+    }
   }
 }
 
@@ -99,6 +145,11 @@ export default class Experience extends Vue {}
   .E-Wrapper {
     > p {
       margin: 3.5rem 0 1.5rem 0;
+    }
+
+    .E-Carousel {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto auto auto;
     }
   }
 }

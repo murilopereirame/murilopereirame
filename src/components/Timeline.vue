@@ -49,55 +49,71 @@ export default class Timeline extends Vue {}
     background-color: #c5c5c5;
     height: 2px;
     position: absolute;
-    top: 0.75rem;
+    top: 1.125rem;
     margin: 0 auto;
     z-index: 0;
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 768px) {
   .Timeline {
-    height: 100%;
-  }
-
-  .T-Years {
-    height: 100%;
-  }
-
-  .T-Line {
-    height: calc(100% - 1rem);
-  }
-
-  .T-Wrapper {
-    position: relative;
-    padding: 0;
-    width: min-content;
-    height: 100%;
-  }
-
-  .T-Line {
-    width: 2px;
-    margin: auto 0;
-    left: 50%;
-    right: 50%;
-  }
-
-  .T-Years {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    .Year {
-      margin-right: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .Year:last-of-type {
-      margin-top: auto;
-      margin-left: initial;
-      margin-bottom: 0;
+    .T-Line {
+      height: 3px;
     }
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  .Timeline {
+    .T-Line {
+      top: 2rem;
+    }
+  }
+}
+
+// @media only screen and (min-width: 1280px) {
+//   .Timeline {
+//     height: 100%;
+//   }
+
+//   .T-Years {
+//     height: 100%;
+//   }
+
+//   .T-Line {
+//     height: calc(100% - 1rem);
+//   }
+
+//   .T-Wrapper {
+//     position: relative;
+//     padding: 0;
+//     width: min-content;
+//     height: 100%;
+//   }
+
+//   .T-Line {
+//     width: 2px;
+//     margin: auto 0;
+//     left: 50%;
+//     right: 50%;
+//   }
+
+//   .T-Years {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     justify-content: flex-start;
+
+//     .Year {
+//       margin-right: 0;
+//       margin-bottom: 1.5rem;
+//     }
+
+//     .Year:last-of-type {
+//       margin-top: auto;
+//       margin-left: initial;
+//       margin-bottom: 0;
+//     }
+//   }
+// }
 </style>

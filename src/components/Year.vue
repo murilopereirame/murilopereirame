@@ -52,14 +52,39 @@ export default class Timeline extends Vue {}
   }
 }
 
-@media only screen and (min-width: 1280px) {
-  .Y-Square {
-    padding: 1rem 1rem;
-    width: 1.25rem;
-    height: 1.25rem;
+@media only screen and (min-width: 768px) {
+  .Year {
+    .Y-Square {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
     span {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
+    }
+
+    .Active {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .Year {
+    .Y-Square {
+      padding: 1rem 1rem;
+      width: 1rem;
+      height: 1rem;
+
+      span {
+        font-size: 1.35rem;
+      }
+    }
+
+    .Active {
+      width: 2rem;
+      height: 2rem;
     }
   }
 }

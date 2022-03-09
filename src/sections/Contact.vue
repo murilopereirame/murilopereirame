@@ -30,6 +30,7 @@ export default class Contact extends Vue {}
 
 <style scoped lang="scss">
 .Contact {
+  margin-top: 10rem;
   .C-Wrapper {
     padding-bottom: 2rem;
     display: flex;
@@ -135,18 +136,9 @@ export default class Contact extends Vue {}
         }
       }
 
-      button {
-        font-size: 1.1rem;
-      }
-
-      .C-Info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: -0.25rem;
-
-        a {
-          font-size: 1.1rem;
+      .C-Form-Footer {
+        button {
+          font-size: 1.5rem;
         }
       }
     }
@@ -158,6 +150,11 @@ export default class Contact extends Vue {}
 
       > p {
         margin: 2.75rem 0 1.5rem 0;
+      }
+
+      form {
+        width: 80%;
+        max-width: 1366px;
       }
     }
   }
