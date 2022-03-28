@@ -11,8 +11,20 @@
         >
       </div>
       <div class="F-Social">
-        <img src="@/assets/github.svg" alt="GitHub Logo" />
-        <img src="@/assets/linkedin.svg" alt="LinkedIn Logo" />
+        <a
+          target="_blank"
+          href="https://github.com/murilopereirame"
+          rel="nofollow noreferrer"
+        >
+          <img src="@/assets/github.svg" alt="GitHub Logo" />
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/mrochapereira/"
+          rel="nofollow noreferrer"
+        >
+          <img src="@/assets/linkedin.svg" alt="LinkedIn Logo" />
+        </a>
       </div>
     </div>
   </div>

@@ -31,7 +31,7 @@ export default class Work extends Vue {}
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   min-width: 326px;
-
+  width: 80%;
   p {
     margin: 0;
     text-align: left;

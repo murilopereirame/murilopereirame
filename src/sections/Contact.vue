@@ -3,15 +3,28 @@
     <Title text="CONTATO" />
     <div class="C-Wrapper">
       <form>
-        <input type="text" placeholder="Nome" aria-label="Digite seu nome" />
         <input
+          type="text"
+          :value="name"
+          @input="(evt) => (name = evt.target.value)"
+          placeholder="Nome"
+          aria-label="Digite seu nome"
+        />
+        <input
+          :value="email"
+          @input="(evt) => (email = evt.target.value)"
           type="email"
           placeholder="E-mail"
           aria-label="Digite seu email"
         />
-        <textarea aria-label="Digite sua mensagem" placeholder="Mensagem" />
+        <textarea
+          :value="message"
+          @input="(evt) => (message = evt.target.value)"
+          aria-label="Digite sua mensagem"
+          placeholder="Mensagem"
+        />
         <div class="C-Form-Footer">
-          <button type="submit">ENVIAR</button>
+          <button v-on:click="handleSend" type="button">ENVIAR</button>
         </div>
       </form>
     </div>
@@ -24,13 +37,21 @@ import Title from "../components/Title.vue";
 
 @Options({
   components: { Title },
+  methods: {
+    handleSend() {
+      console.log(this.email);
+    },
+  },
+  data: () => ({
+    email: "",
+  }),
 })
 export default class Contact extends Vue {}
 </script>
 
 <style scoped lang="scss">
 .Contact {
-  margin-top: 10rem;
+  margin-top: 5rem;
   .C-Wrapper {
     padding-bottom: 2rem;
     display: flex;
@@ -55,6 +76,7 @@ export default class Contact extends Vue {}
         font-size: 1.15rem;
         display: flex;
         align-items: center;
+        cursor: pointer;
       }
 
       padding: 0 0.25rem;

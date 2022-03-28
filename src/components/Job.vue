@@ -1,21 +1,16 @@
 <template>
   <div class="Job">
-    <div class="J-Wrapper">
-      <img
-        :src="image && image"
-        :alt="title ? title + ' Image' : 'Job Image'"
-      />
+    <div class="J-Image">
+      <img :src="image" alt="Job Image" />
     </div>
-    <div class="J-Overlay">
-      <div class="J-O-Wrapper">
-        <div class="J-Info">
-          <span>{{ year }}</span>
-          <p>{{ title }}</p>
-        </div>
-        <div class="J-O-Techs">
-          <div class="J-Tech" v-for="tech in techs" :key="tech">
-            {{ tech }}
-          </div>
+    <div class="J-Wrapper">
+      <div class="J-Info">
+        <span>{{ year }}</span>
+        <p>{{ title }}</p>
+      </div>
+      <div class="J-Techs">
+        <div class="J-Tech" v-for="tech in techs" :key="tech">
+          {{ tech }}
         </div>
       </div>
     </div>
@@ -39,104 +34,91 @@ export default class Job extends Vue {}
 
 <style scoped lang="scss">
 .Job {
-  background-color: #1f4068;
-  color: #ebecf1;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 648px;
   position: relative;
-  max-width: 100%;
+  overflow: hidden;
 
-  .J-Wrapper {
-    display: flex;
-    padding: 0.25rem;
+  border: 2.5px solid #133f66;
+  background-color: #133f66;
 
+  .J-Image {
     img {
-      width: 100%;
       object-fit: cover;
+      width: 100%;
+      height: 648px;
     }
   }
 
-  .J-Overlay {
-    top: 0;
+  .J-Wrapper {
     position: absolute;
-
+    bottom: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-end;
+    align-items: flex-start;
 
-    .J-O-Wrapper {
+    padding: 0.25rem 0.25rem;
+    .J-Info {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: center;
-      width: 100%;
+
+      color: #eeeeee;
 
       p {
         margin: 0;
+        font-weight: bolder;
+        text-transform: uppercase;
+        font-size: 1.75rem;
       }
+    }
 
-      .J-Info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.15rem 0.5rem;
-
-        > p {
-          font-weight: 700;
-          font-size: 2rem;
-          margin: 0;
-          line-height: 2.25rem;
-        }
-
-        > span {
-          font-size: 1.15rem;
-          font-weight: 300;
-        }
-      }
-
-      .J-O-Techs {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0rem 0.5rem;
-        padding-bottom: 0.4rem;
-      }
+    .J-Techs {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      column-gap: 0.25rem;
+      row-gap: 0.25rem;
+      grid-template-rows: auto;
+      margin-top: 1rem;
 
       .J-Tech {
         background-color: #133f66;
-        margin-right: 0.5rem;
-        padding: 0.05rem 0.75rem;
-        font-size: 0.9rem;
-        font-weight: 300;
-      }
-
-      .J-Tech:last-child {
-        margin-right: 0;
+        color: #eeeeee;
+        padding: 0.15rem 0.25rem;
+        width: 5rem;
       }
     }
   }
+}
 
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 814px) {
+  .Job {
     .J-Wrapper {
-      max-height: calc(100% - 0.5rem);
-    }
-
-    .J-Overlay {
-      .J-O-Wrapper {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        > span,
-        .J-Tech {
-          font-size: 1.1rem;
+      .J-Info {
+        span {
+          font-size: 1.25rem;
         }
 
-        > p {
-          font-weight: 500;
-          font-size: 2.25rem;
+        p {
+          font-size: 2.5rem;
+        }
+      }
+
+      .J-Techs {
+        margin-top: 0.5rem;
+
+        .J-Tech {
+          padding: 0.15rem 0.5rem;
+          width: initial;
+          min-width: 5rem;
+          font-size: 1.25rem;
         }
       }
     }

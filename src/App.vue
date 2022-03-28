@@ -48,4 +48,8 @@ html {
   height: 100%;
   scroll-behavior: smooth;
 }
+
+.agile__actions {
+  display: none;
+}
 </style>

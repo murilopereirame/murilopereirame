@@ -44,14 +44,14 @@ export default class Title extends Vue {}
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 540px) {
   .Title {
     .T-Back {
-      font-size: 5.5rem;
+      font-size: 6.5rem;
     }
 
     .T-Front {
-      font-size: 3.75rem;
+      font-size: 4.75rem;
     }
   }
 }
