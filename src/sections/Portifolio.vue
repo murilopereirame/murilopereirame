@@ -20,6 +20,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import axios from "axios";
 //@ts-ignore
 import { VueAgile } from "vue-agile";
 
@@ -35,6 +36,20 @@ import Swipe from "../components/Swipe.vue";
     Title,
     Swipe,
     agile: VueAgile,
+  },
+  methods: {
+    async loadJobs() {
+      try {
+        const result = await axios.get(`${process.env.VUE_APP_API_URL}/jobs`);
+
+        if (result.data.success) this.jobs = result.data.data;
+      } catch (err) {
+        this.jobs = [];
+      }
+    },
+  },
+  beforeMount() {
+    this.loadJobs();
   },
   data: () => {
     return {
@@ -71,57 +86,7 @@ import Swipe from "../components/Swipe.vue";
           },
         ],
       },
-      jobs: [
-        {
-          title: "Organ",
-          techs: ["Flutter", "Dart"],
-          year: "2020",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "Balbino Shop",
-          techs: ["HTML", "CSS", "JS", "Tray Corp"],
-          year: "2020",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "SafyPet",
-          techs: ["ReactJS", "TypeScript", "PHP"],
-          year: "2020",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "JS Maia",
-          techs: ["ReactJS", "TypeScript", "PHP"],
-          year: "2021",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "Felicidade A2",
-          techs: ["ReactJS", "TypeScript"],
-          year: "2021",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "Sueca Brasileira",
-          techs: ["Java"],
-          year: "2021",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-        {
-          title: "Eletromed",
-          techs: ["ReactJS", "TypeScript", "PHP"],
-          year: "2021",
-          image:
-            "https://murilopereira.dev.br/static/media/jsmaia.995880cf.png",
-        },
-      ],
+      jobs: [],
     };
   },
 })

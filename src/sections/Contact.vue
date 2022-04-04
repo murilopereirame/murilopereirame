@@ -33,17 +33,52 @@
 
 <script>
 import { Options, Vue } from "vue-class-component";
+import axios from "axios";
 import Title from "../components/Title.vue";
 
 @Options({
   components: { Title },
   methods: {
-    handleSend() {
-      console.log(this.email);
+    async handleSend() {
+      try {
+        await this.$recaptchaLoaded();
+        const token = await this.$recaptcha("ACTION_CONTACT");
+
+        const headers = {
+          "Content-Type": "application/json",
+          "X-Recaptcha-Token": token,
+        };
+
+        const result = await axios.post(
+          `${process.env.VUE_APP_API_URL}/contacts`,
+          {
+            name: this.name,
+            email: this.email,
+            message: this.message,
+          },
+          { headers }
+        );
+
+        if (result.data.success) {
+          this.name = "";
+          this.message = "";
+          this.email = "";
+          return alert("Mensagem enviada com sucesso!\nObrigado =)");
+        } else
+          return alert(
+            "Houve um erro durante o envio.\nTente novamente mais tarde"
+          );
+      } catch (err) {
+        return alert(
+          "Houve um erro durante o envio.\nTente novamente mais tarde"
+        );
+      }
     },
   },
   data: () => ({
+    name: "",
     email: "",
+    message: "",
   }),
 })
 export default class Contact extends Vue {}

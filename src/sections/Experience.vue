@@ -20,6 +20,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import axios from "axios";
 //@ts-ignore
 import { VueAgile } from "vue-agile";
 import Work from "../components/Work.vue";
@@ -28,6 +29,22 @@ import Swipe from "../components/Swipe.vue";
 
 @Options({
   components: { Work, Title, Swipe, agile: VueAgile },
+  methods: {
+    async loadExperiences() {
+      try {
+        const result = await axios.get(
+          `${process.env.VUE_APP_API_URL}/experiences`
+        );
+
+        if (result.data.success) this.works = result.data.data;
+      } catch (err) {
+        this.works = [];
+      }
+    },
+  },
+  beforeMount() {
+    this.loadExperiences();
+  },
   data: () => ({
     options: {
       settings: {
@@ -60,29 +77,7 @@ import Swipe from "../components/Swipe.vue";
         },
       ],
     },
-    works: [
-      {
-        employer: "Gerenet Tecnologia",
-        techs: ["PHP", "HTML", "CSS", "JS"],
-        startDate: "2019",
-        endDate: "2021",
-        title: "Fullstack",
-      },
-      {
-        employer: "PREF. PRES. PRUDENTE",
-        techs: ["PHP", "React", "Flutter"],
-        startDate: "2020",
-        endDate: "2021",
-        title: "Fullstack",
-      },
-      {
-        employer: "Compass UOL",
-        techs: ["React-Native"],
-        startDate: "2021",
-        endDate: "Atual",
-        title: "Front-End",
-      },
-    ],
+    works: [],
   }),
 })
 export default class Experience extends Vue {}
