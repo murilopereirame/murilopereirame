@@ -36,8 +36,8 @@ export default class Job extends Vue {}
 .Job {
   display: flex;
   flex-direction: column;
-  width: 95%;
   height: 648px;
+  max-width: 565px;
   position: relative;
   overflow: hidden;
 

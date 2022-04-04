@@ -2,17 +2,25 @@
   <div class="Portifolio" id="portifolio">
     <Title text="PORTIFÓLIO" />
     <div class="P-Wrapper">
-      <agile :options="options" :infinite="true">
-        <div v-for="job in jobs" v-bind:key="job.title" class="slide">
-          <Job
+      <Swiper
+        :slides-per-view="3"
+        :space-between="25"
+        centeredSlides
+        loop
+        class="job-swiper"
+      >
+        <SwiperSlide
+          v-for="job in jobs"
+          v-bind:key="job.title"
+          class="job-slide"
+          ><Job
             :key="job.title"
             :title="job.title"
             :techs="job.techs"
             :year="job.year"
             :image="job.image"
-          />
-        </div>
-      </agile>
+        /></SwiperSlide>
+      </Swiper>
     </div>
     <Swipe />
   </div>
@@ -29,13 +37,18 @@ import Job from "../components/Job.vue";
 import Title from "../components/Title.vue";
 import Swipe from "../components/Swipe.vue";
 
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+
 @Options({
   components: {
     Timeline,
     Job,
     Title,
     Swipe,
-    agile: VueAgile,
+    Swiper,
+    SwiperSlide,
   },
   methods: {
     async loadJobs() {
@@ -108,19 +121,14 @@ export default class Portifolio extends Vue {}
     display: flex;
     justify-content: center;
 
+    .swiper-container {
+      width: 80%;
+    }
+
     @media only screen and (min-width: 1920px) {
       & {
         width: 80%;
       }
-    }
-
-    .agile {
-      overflow: hidden;
-    }
-
-    .agile__slide {
-      display: flex;
-      justify-content: center;
     }
   }
 

@@ -2,33 +2,38 @@
   <div class="Experience" id="exp">
     <Title text="EXPERIÊNCIA" />
     <div class="E-Wrapper">
-      <agile :options="options" :infinite="true">
-        <div v-for="work in works" v-bind:key="work.title" class="exp-slide">
+      <Swiper class="work-swipe" :slides-per-view="2" :space-between="15">
+        <SwiperSlide
+          v-for="work in works"
+          v-bind:key="work.id"
+          class="work-slide"
+        >
           <Work
             :employer="work.employer"
             :techs="work.techs"
             :startDate="work.startDate"
             :endDate="work.endDate"
-            :title="work.title"
+            :role="work.role"
           />
-        </div>
-      </agile>
-      <Swipe />
+        </SwiperSlide>
+      </Swiper>
     </div>
+    <Swipe />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import axios from "axios";
-//@ts-ignore
-import { VueAgile } from "vue-agile";
 import Work from "../components/Work.vue";
 import Title from "../components/Title.vue";
 import Swipe from "../components/Swipe.vue";
 
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 @Options({
-  components: { Work, Title, Swipe, agile: VueAgile },
+  components: { Work, Title, Swipe, Swiper, SwiperSlide },
   methods: {
     async loadExperiences() {
       try {
@@ -90,22 +95,22 @@ export default class Experience extends Vue {}
   flex-direction: column;
   align-items: center;
 
-  .agile {
-    overflow: hidden;
-  }
-
-  .agile__slide {
-    display: flex;
-    justify-content: center;
-  }
-
   .E-Wrapper {
     user-select: none;
     margin-top: 1rem;
-    width: 97.5%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    .swiper-container {
+      width: 90%;
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
 </style>

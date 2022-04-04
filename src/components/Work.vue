@@ -1,8 +1,11 @@
 <template>
   <div class="Work">
     <p class="W-Employer">{{ employer }}</p>
-    <p class="W-Period">{{ startDate }} - {{ endDate }}</p>
-    <p class="W-Title">{{ title }}</p>
+    <p class="W-Period">
+      {{ new Date(startDate).getFullYear() }} -
+      {{ endDate === "Atual" ? "Atual" : new Date(endDate).getFullYear() }}
+    </p>
+    <p class="W-Title">{{ role }}</p>
     <p class="W-Techs">{{ techs.join("/") }}</p>
   </div>
 </template>
@@ -16,7 +19,7 @@ import { Options, Vue } from "vue-class-component";
     techs: Array,
     startDate: String,
     endDate: String,
-    title: String,
+    role: String,
   },
 })
 export default class Work extends Vue {}
@@ -31,7 +34,10 @@ export default class Work extends Vue {}
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   min-width: 326px;
-  width: 80%;
+  max-width: 90%;
+
+  position: relative;
+
   p {
     margin: 0;
     text-align: left;
