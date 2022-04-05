@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import Header from "./sections/Header.vue";
 import Portifolio from "./sections/Portifolio.vue";
 import Experience from "./sections/Experience.vue";
@@ -21,6 +22,10 @@ import Footer from "./sections/Footer.vue";
     Experience,
     Contact,
     Footer,
+  },
+  beforeMount() {
+    const analytics = getAnalytics();
+    logEvent(analytics, "home_view");
   },
 })
 export default class App extends Vue {}

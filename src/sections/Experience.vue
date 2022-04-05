@@ -2,7 +2,11 @@
   <div class="Experience" id="exp">
     <Title text="EXPERIÊNCIA" />
     <div class="E-Wrapper">
-      <Swiper class="work-swipe" :slides-per-view="2" :space-between="15">
+      <Swiper
+        class="work-swipe"
+        @slideChange="onSwipe"
+        :breakpoints="swiperOptions.breakpoints"
+      >
         <SwiperSlide
           v-for="work in works"
           v-bind:key="work.id"
@@ -24,6 +28,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import axios from "axios";
 import Work from "../components/Work.vue";
 import Title from "../components/Title.vue";
@@ -35,6 +40,10 @@ import "swiper/swiper.min.css";
 @Options({
   components: { Work, Title, Swipe, Swiper, SwiperSlide },
   methods: {
+    onSwipe() {
+      const analytics = getAnalytics();
+      logEvent(analytics, "experience_swipe");
+    },
     async loadExperiences() {
       try {
         const result = await axios.get(
@@ -43,6 +52,11 @@ import "swiper/swiper.min.css";
 
         if (result.data.success) this.works = result.data.data;
       } catch (err) {
+        const analytics = getAnalytics();
+        logEvent(analytics, "error", {
+          error: err,
+          class: "experience",
+        });
         this.works = [];
       }
     },
@@ -51,36 +65,21 @@ import "swiper/swiper.min.css";
     this.loadExperiences();
   },
   data: () => ({
-    options: {
-      settings: {
-        mobileFirst: true,
+    swiperOptions: {
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        1280: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        1920: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
       },
-      responsive: [
-        {
-          breakpoint: 200,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 1900,
-          settings: {
-            slidesToShow: 3,
-          },
-        },
-      ],
     },
     works: [],
   }),
@@ -98,7 +97,7 @@ export default class Experience extends Vue {}
   .E-Wrapper {
     user-select: none;
     margin-top: 1rem;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     flex-direction: column;

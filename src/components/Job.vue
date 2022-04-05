@@ -5,7 +5,7 @@
     </div>
     <div class="J-Wrapper">
       <div class="J-Info">
-        <span>{{ year }}</span>
+        <span>{{ new Date(year).getFullYear() }}</span>
         <p>{{ title }}</p>
       </div>
       <div class="J-Techs">
@@ -100,14 +100,16 @@ export default class Job extends Vue {}
 
 @media only screen and (min-width: 814px) {
   .Job {
+    height: 512px;
+
     .J-Wrapper {
       .J-Info {
         span {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
         }
 
         p {
-          font-size: 2.5rem;
+          font-size: 2.25rem;
         }
       }
 
@@ -118,7 +120,7 @@ export default class Job extends Vue {}
           padding: 0.15rem 0.5rem;
           width: initial;
           min-width: 5rem;
-          font-size: 1.25rem;
+          font-size: 1.15rem;
         }
       }
     }

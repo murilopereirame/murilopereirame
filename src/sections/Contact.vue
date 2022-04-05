@@ -33,6 +33,7 @@
 
 <script>
 import { Options, Vue } from "vue-class-component";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import axios from "axios";
 import Title from "../components/Title.vue";
 
@@ -59,6 +60,9 @@ import Title from "../components/Title.vue";
           { headers }
         );
 
+        const analytics = getAnalytics();
+        logEvent(analytics, "contact_send");
+
         if (result.data.success) {
           this.name = "";
           this.message = "";
@@ -69,6 +73,12 @@ import Title from "../components/Title.vue";
             "Houve um erro durante o envio.\nTente novamente mais tarde"
           );
       } catch (err) {
+        const analytics = getAnalytics();
+        logEvent(analytics, "error", {
+          error: err,
+          class: "contact",
+        });
+
         return alert(
           "Houve um erro durante o envio.\nTente novamente mais tarde"
         );

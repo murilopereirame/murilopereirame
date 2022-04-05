@@ -3,11 +3,10 @@
     <Title text="PORTIFÓLIO" />
     <div class="P-Wrapper">
       <Swiper
-        :slides-per-view="3"
-        :space-between="25"
-        centeredSlides
-        loop
         class="job-swiper"
+        :grid="{ rows: 2 }"
+        @slideChange="onSwipe"
+        :breakpoints="swiperOptions.breakpoints"
       >
         <SwiperSlide
           v-for="job in jobs"
@@ -29,8 +28,6 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import axios from "axios";
-//@ts-ignore
-import { VueAgile } from "vue-agile";
 
 import Timeline from "../components/Timeline.vue";
 import Job from "../components/Job.vue";
@@ -38,6 +35,7 @@ import Title from "../components/Title.vue";
 import Swipe from "../components/Swipe.vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
@@ -51,12 +49,21 @@ import "swiper/swiper.min.css";
     SwiperSlide,
   },
   methods: {
+    onSwipe() {
+      const analytics = getAnalytics();
+      logEvent(analytics, "portifolio_swipe");
+    },
     async loadJobs() {
       try {
         const result = await axios.get(`${process.env.VUE_APP_API_URL}/jobs`);
 
         if (result.data.success) this.jobs = result.data.data;
       } catch (err) {
+        const analytics = getAnalytics();
+        logEvent(analytics, "error", {
+          error: err,
+          class: "experience",
+        });
         this.jobs = [];
       }
     },
@@ -66,38 +73,25 @@ import "swiper/swiper.min.css";
   },
   data: () => {
     return {
-      options: {
-        mobileFirst: true,
-        settings: {
-          mobileFirst: true,
-          slidesToShow: 1,
+      swiperOptions: {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          720: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1920: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
         },
-        responsive: [
-          {
-            breakpoint: 200,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-            },
-          },
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 1900,
-            settings: {
-              slidesToShow: 4,
-            },
-          },
-        ],
       },
       jobs: [],
     };
