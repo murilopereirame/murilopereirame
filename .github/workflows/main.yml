@@ -1,0 +1,35 @@
+on:
+   push:
+    branches:
+      - master
+
+name: 🚀 Deploy Master
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '16'
+      
+    - name: 🔨 Build Project
+      run: |
+        yarn install
+        yarn build
+    
+    - name: List output files
+      run: find build/ -print
+      
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.pereiratech.com.br
+        username: u558388171.murilopereira.dev.br
+        password: ${{ secrets.ftp_password }}
+        server-dir: public_html/
+        local-dir: build/
