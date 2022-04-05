@@ -19,7 +19,6 @@ jobs:
 
     - name: 🔒 Create .env file
       run:
-        touch .env
         echo '${{ secrets.VUE_ENVS }}' > .env
       
     - name: 🔨 Build Project
