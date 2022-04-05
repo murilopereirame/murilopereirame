@@ -35,5 +35,4 @@ jobs:
         server: ftp.pereiratech.com.br
         username: u558388171.murilopereira.dev.br
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ./public_html/
         local-dir: dist/
