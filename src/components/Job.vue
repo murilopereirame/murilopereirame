@@ -41,14 +41,14 @@ export default class Job extends Vue {}
   position: relative;
   overflow: hidden;
 
-  border: 2.5px solid #133f66;
+  border: 3px solid #133f66;
   background-color: #133f66;
 
   .J-Image {
     img {
-      object-fit: cover;
       width: 100%;
-      height: 648px;
+      object-fit: cover;
+      max-height: 100%;
     }
   }
 
@@ -100,7 +100,7 @@ export default class Job extends Vue {}
 
 @media only screen and (min-width: 814px) {
   .Job {
-    height: 512px;
+    height: 620px;
 
     .J-Wrapper {
       .J-Info {
