@@ -49,6 +49,7 @@ export default class Job extends Vue {}
       width: 100%;
       object-fit: cover;
       max-height: 100%;
+      height: 648px;
     }
   }
 
