@@ -97,10 +97,14 @@ export default class Experience extends Vue {}
   .E-Wrapper {
     user-select: none;
     margin-top: 1rem;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @media only screen and (min-width: 768px) {
+      width: 80%;
+    }
 
     .swiper-container {
       width: 90%;
