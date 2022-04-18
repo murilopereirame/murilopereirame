@@ -106,6 +106,10 @@ export default class Experience extends Vue {}
       width: 80%;
     }
 
+    @media only screen and (min-width: 1280px) {
+      width: 95%;
+    }
+
     .swiper-container {
       width: 90%;
 

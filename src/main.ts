@@ -18,5 +18,10 @@ initializeApp(firebaseConfig);
 
 createApp(App)
   .use(Vue3TouchEvents)
-  .use(VueReCaptcha, { siteKey: process.env.VUE_APP_RECAPTCHA_KEY })
+  .use(VueReCaptcha, {
+    siteKey: process.env.VUE_APP_RECAPTCHA_KEY,
+    loaderOptions: {
+      autoHideBadge: true,
+    },
+  })
   .mount("#app");
