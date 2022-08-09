@@ -5,8 +5,8 @@
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
 🌱 &nbsp;I'm learning UI/UX, Vue and .NET Core.<br /><br />
 🎮 &nbsp;I like to play video games and watch a good series in my free time.<br/><br/>
-✉️ &nbsp;You can contact me through [contato@murilopereira.dev.br](mailto:contato@murilopereira.dev.br). I'll try to respond ASAP!<br/><br/>
-📄 &nbsp;My resume is avaliable [here](https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf) and my portifolio can be checked [here](https://murilopereira.dev.br).
+✉️ &nbsp;You can contact me through ![contato@murilopereira.dev.br](mailto:contato@murilopereira.dev.br). I'll try to respond ASAP!<br/><br/>
+📄 &nbsp;My resume is avaliable ![here](https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf) and my portifolio can be checked ![here](https://murilopereira.dev.br).
 <br/><br/>
 
 ## 🛠 &nbsp;Skills
