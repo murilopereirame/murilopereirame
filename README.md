@@ -1,38 +1,51 @@
-# create-svelte
+## 👨🏻‍💻 &nbsp; **About Me**
+<br/>
+🧔🏻 &nbsp; I'm a software developer at Compass.UOL working on production of a points redemption app with React Native.<br/><br/>
+🎓&nbsp;I'm graduating at UNESP with prevision of ending in 01/2022.<br/><br/>
+💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
+🌱 &nbsp;I'm learning UI/UX, Vue and .NET Core.<br /><br />
+🎮 &nbsp;I like to play video games and watch a good series in my free time.<br/><br/>
+✉️ &nbsp;You can contact me through [contato@murilopereira.dev.br](mailto:contato@murilopereira.dev.br). I'll try to respond ASAP!<br/><br/>
+📄 &nbsp;My resume is avaliable [here](https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf) and my portifolio can be checked [here](https://murilopereira.dev.br).
+<br/><br/>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## 🛠 &nbsp;Skills
 
-## Creating a project
+#### Stacks
+![Flutter](https://img.shields.io/badge/-Flutter-133f66?style=flat&logo=Flutter&logoColor=42A5F5)&nbsp;
+![ReactJS](https://img.shields.io/badge/-ReactJS-133f66?style=flat&logo=React)&nbsp;
+![React Native](https://img.shields.io/badge/-React%20Native-133f66?style=flat&logo=React)&nbsp;
+![SASS](https://img.shields.io/badge/-SASS-133f66?style=flat&logo=sass)&nbsp;
+![Vue](https://img.shields.io/badge/-Vue-133f66?style=flat&logo=vuedotjs)&nbsp;
+![Laravel](https://img.shields.io/badge/-Laravel-133f66?style=flat&logo=laravel)&nbsp;
+![Magento](https://img.shields.io/badge/-Magento-133f66?style=flat&logo=magento)&nbsp;
+![NodeJS](https://img.shields.io/badge/-NodeJS-133f66?style=flat&logo=nodedotjs)&nbsp;  
 
-If you're seeing this, you've probably already done this step. Congrats!
+#### Languages
+![JavaScript](https://img.shields.io/badge/-JavaScript-133f66?style=flat&logo=javascript)&nbsp;
+![Typescript](https://img.shields.io/badge/-Typescript-133f66?style=flat&logo=typescript)&nbsp;
+![PHP](https://img.shields.io/badge/-PHP-133f66?style=flat&logo=php)&nbsp;
+![C#](https://img.shields.io/badge/-C%23-133f66?style=flat&logo=csharp)&nbsp;
+![HTML](https://img.shields.io/badge/-HTML-133f66?style=flat&logo=HTML5)&nbsp;
+![CSS](https://img.shields.io/badge/-CSS-133f66?style=flat&logo=CSS3&logoColor=1572B6)&nbsp;
 
-```bash
-# create a new project in the current directory
-npm init svelte
+#### Databases
+![MySQL](https://img.shields.io/badge/-MySQL-133f66?style=flat&logo=mysql)&nbsp;
+![Firebase Firestore](https://img.shields.io/badge/-Firestore-133f66?style=flat&logo=firebase)&nbsp;
 
-# create a new project in my-app
-npm init svelte my-app
-```
+#### Tools
+![Git](https://img.shields.io/badge/-Git-133f66?style=flat&logo=git)&nbsp;
+![GitHub](https://img.shields.io/badge/-GitHub-133f66?style=flat&logo=github)&nbsp;
+![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-133f66?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
+![Firebase](https://img.shields.io/badge/-Firebase-133f66?style=flat&logo=firebase)&nbsp;
 
-## Developing
+#### Testing
+![Jest](https://img.shields.io/badge/-Jest-133f66?style=flat&logo=jest)&nbsp;
+![PHP Unit](https://img.shields.io/badge/-PHP%20Unit-133f66?style=flat)&nbsp;
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### 📫 &nbsp; How to reach me:
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+<a href="https://www.linkedin.com/in/mrochapereira/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white"/></a> &nbsp;
+<a href="https://wa.me/5518981892681"><img alt="WhatsApp" src="https://img.shields.io/badge/Whatsapp-25D366?style=flat&logo=whatsapp&logoColor=white" /></a> &nbsp;
+<a href="mailto:contato@murilopereira.dev.br"><img src="https://img.shields.io/badge/-@%20EMail-133f66?style=flat&logo=mail"/></a> &nbsp;
