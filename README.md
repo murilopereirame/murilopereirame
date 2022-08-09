@@ -5,8 +5,8 @@
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
 🌱 &nbsp;I'm learning UI/UX, Vue and .NET Core.<br /><br />
 🎮 &nbsp;I like to play video games and watch a good series in my free time.<br/><br/>
-✉️ &nbsp;You can contact me through ![contato@murilopereira.dev.br](mailto:contato@murilopereira.dev.br). I'll try to respond ASAP!<br/><br/>
-📄 &nbsp;My resume is avaliable ![here](https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf) and my portifolio can be checked ![here](https://murilopereira.dev.br).
+✉️ &nbsp;You can contact me through <a target="_blank" href="mailto:contato@murilopereira.dev.br">contato@murilopereira.dev.br</a>. I'll try to respond ASAP!<br/><br/>
+📄 &nbsp;My resume is avaliable <a target="_blank" href="https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf">here</a> and my portifolio can be checked <a target="_blank" href="https://murilopereira.dev.br">here</a>.
 <br/><br/>
 
 ## 🛠 &nbsp;Skills
@@ -46,6 +46,6 @@
 ### 📫 &nbsp; How to reach me:
 
 
-<a href="https://www.linkedin.com/in/mrochapereira/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white"/></a> &nbsp;
-<a href="https://wa.me/5518981892681"><img alt="WhatsApp" src="https://img.shields.io/badge/Whatsapp-25D366?style=flat&logo=whatsapp&logoColor=white" /></a> &nbsp;
-<a href="mailto:contato@murilopereira.dev.br"><img src="https://img.shields.io/badge/-@%20EMail-133f66?style=flat&logo=mail"/></a> &nbsp;
+<a target="_blank" href="https://www.linkedin.com/in/mrochapereira/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white"/></a> &nbsp;
+<a target="_blank" href="https://wa.me/5518981892681"><img alt="WhatsApp" src="https://img.shields.io/badge/Whatsapp-25D366?style=flat&logo=whatsapp&logoColor=white" /></a> &nbsp;
+<a target="_blank" href="mailto:contato@murilopereira.dev.br"><img src="https://img.shields.io/badge/-@%20EMail-133f66?style=flat&logo=mail"/></a> &nbsp;
