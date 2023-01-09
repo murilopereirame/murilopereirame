@@ -1,9 +1,9 @@
 ## 👨🏻‍💻 &nbsp; **About Me**
 <br/>
 🧔🏻 &nbsp; I'm a software developer at Compass.UOL working on production of a points redemption app with React Native.<br/><br/>
-🎓&nbsp;I'm graduating at UNESP with prevision of ending in 01/2022.<br/><br/>
+🎓&nbsp;I'm graduated in Computer Science at UNESP.<br/><br/>
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
-🌱 &nbsp;I'm learning UI/UX, Vue and .NET Core.<br /><br />
+🌱 &nbsp;I'm learning UI/UX, Vue, Kotlin and Swift.<br /><br />
 🎮 &nbsp;I like to play video games and watch a good series in my free time.<br/><br/>
 ✉️ &nbsp;You can contact me through <a target="_blank" href="mailto:contato@murilopereira.dev.br">contato@murilopereira.dev.br</a>. I'll try to respond ASAP!<br/><br/>
 📄 &nbsp;My resume is avaliable <a target="_blank" href="https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf">here</a> and my portifolio can be checked <a target="_blank" href="https://murilopereira.dev.br">here</a>.
