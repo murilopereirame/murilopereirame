@@ -56,4 +56,16 @@ export default defineComponent({
       text-align: left
       font-size: .75rem
       max-width: 60%
+@media only screen and (min-width: 668px)
+  .skill-title
+    font-size: .75rem
+  .skill-info
+    font-size: .65rem
+@media only screen and (min-width: 1920px)
+  .S-Container
+    .skill-info
+      .skill-title
+        font-size: 1rem
+      .skill-info
+        font-size: .95rem
 </style>

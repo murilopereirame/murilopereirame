@@ -93,4 +93,22 @@ export default defineComponent({
 
 .extend-width
   width: 195px
+@media only screen and (min-width: 540px)
+  .profile-picture-container
+    img
+      width: 420px
+@media only screen and (min-width: 668px)
+  .hide-on-desktop
+    display: none
+  .profile-picture-container
+    img
+      width: 380px
+@media only screen and (min-width: 1360px)
+  .profile-picture-container
+    img
+      width: 420px
+@media only screen and (min-width: 1920px)
+  .profile-picture-container
+    img
+      width: 520px
 </style>

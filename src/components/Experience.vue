@@ -64,4 +64,11 @@ export default defineComponent({
     display: flex
     gap: 8px
     margin-top: 20px
+
+@media only screen and (min-width: 1360px)
+  .experiece-container
+    margin: 0 auto
+@media only screen and (min-width: 1920px)
+  .experiece-container
+    width: 350px
 </style>

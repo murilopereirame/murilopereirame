@@ -10,10 +10,14 @@
   "dependencies": {
     "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/js": "^7.0.96",
+    "axios": "^1.1.3",
     "core-js": "^3.8.3",
+    "firebase": "^9.14.0",
     "node-sass": "^7.0.1",
+    "pinia": "^2.0.23",
     "swiper": "^8.3.2",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",

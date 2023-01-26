@@ -55,5 +55,18 @@ export default defineComponent({
       font-size: .95rem
     .degree-institution
       text-transform: uppercase
-    .degree-interval
+@media only screen and (min-width: 1920px)
+  .degree-container
+    .degree-icon
+      margin-right: 15px
+      svg
+        width: 4.25rem
+        height: 4.25rem
+
+    .degree-info
+      font-size: 1rem
+      .degree-title
+        margin-bottom: .25rem
+      .degree
+        font-size: 1.25rem
 </style>

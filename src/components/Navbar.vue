@@ -1,20 +1,36 @@
 <template>
-  <div class="mobile-navbar-container">
+  <nav class="mobile-navbar-container">
     <img src="../assets/logo.svg" alt="Logo Murilo Pereira" />
     <div
       class="mobile-nav-items"
       :class="{
         'item-hidden': hideNavItems,
       }"
-      v-on:click="handleNav"
+      @click="handleNav"
     >
-      <NavbarItem title="Projetos" href="#projetos" />
-      <NavbarItem title="Experiência" href="#exp" />
-      <NavbarItem title="Contato" href="#contato" />
+      <NavbarItem
+        :closeNav="closeNav"
+        :isOpen="!hideNavItems"
+        title="Projetos"
+        href="#projetos"
+      />
+      <NavbarItem
+        :closeNav="closeNav"
+        :isOpen="!hideNavItems"
+        title="Experiência"
+        href="#experiencia"
+      />
+      <NavbarItem
+        :closeNav="closeNav"
+        :isOpen="!hideNavItems"
+        title="Contato"
+        href="#contato"
+      />
     </div>
-  </div>
+  </nav>
 </template>
 <script lang="ts">
+import { analytics } from "@/store";
 import { defineComponent } from "vue";
 import NavbarItem from "./NavItem.vue";
 
@@ -26,15 +42,46 @@ export default defineComponent({
     };
   },
   methods: {
-    handleNav() {
+    handleNav(e) {
+      analytics.logEvent("interaction", {
+        eventAction: "click",
+        eventLabel: "navbar",
+      });
+      if (this.hideNavItems && window.innerWidth < 968) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
       this.hideNavItems = !this.hideNavItems;
     },
+    closeNav() {
+      if (window.innerWidth < 968) this.hideNavItems = true;
+    },
+  },
+  beforeMount() {
+    if (window.innerWidth > 968) this.hideNavItems = false;
   },
   components: {
     NavbarItem,
   },
 });
 </script>
+
+<style lang="sass">
+.item-hidden
+  transform: translate(100%)
+  .m-nav-item
+    a
+      opacity: 0
+      transition: opacity .25s linear
+
+@media only screen and (min-width: 668px)
+  .item-hidden
+    transform: unset
+    .m-nav-item
+      a
+        opacity: 1
+</style>
+
 <style lang="sass" scoped>
 .mobile-navbar-container
   display: flex
@@ -56,13 +103,15 @@ export default defineComponent({
     cursor: pointer
     *
       margin: 0 0 0 0
-</style>
 
-<style lang="sass">
-.item-hidden
-  transform: translate(100%)
-  .m-nav-item
-    a
-      opacity: 0
-      transition: opacity .25s linear
+@media only screen and (min-width: 668px)
+  .mobile-navbar-container
+    img
+      display: none
+    .mobile-nav-items
+      flex-direction: row
+      width: 100%
+      justify-content: flex-end
+      .m-nav-item
+        margin-left: 10px
 </style>
