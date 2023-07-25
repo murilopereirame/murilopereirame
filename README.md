@@ -27,6 +27,7 @@
 ![JavaScript](https://img.shields.io/badge/-JavaScript-133f66?style=flat&logo=javascript)&nbsp;
 ![Typescript](https://img.shields.io/badge/-Typescript-133f66?style=flat&logo=typescript)&nbsp;
 ![Kotlin](https://img.shields.io/badge/-Kotlin-133f66?style=flat&logo=kotlin)&nbsp;
+![Pyhton](https://img.shields.io/badge/-Python-133f66?style=flat&logo=python)&nbsp;
 ![PHP](https://img.shields.io/badge/-PHP-133f66?style=flat&logo=php)&nbsp;
 ![C#](https://img.shields.io/badge/-C%23-133f66?style=flat&logo=csharp)&nbsp;
 ![HTML](https://img.shields.io/badge/-HTML-133f66?style=flat&logo=HTML5)&nbsp;
@@ -41,6 +42,7 @@
 ![GitHub](https://img.shields.io/badge/-GitHub-133f66?style=flat&logo=github)&nbsp;
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-133f66?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
 ![Firebase](https://img.shields.io/badge/-Firebase-133f66?style=flat&logo=firebase)&nbsp;
+![Docker](https://img.shields.io/badge/-Docker-133f66?style=flat&logo=docker)&nbsp;
 
 #### Testing
 ![Jest](https://img.shields.io/badge/-Jest-133f66?style=flat&logo=jest)&nbsp;
