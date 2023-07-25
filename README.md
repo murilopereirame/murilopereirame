@@ -3,20 +3,22 @@
 🧔🏻 &nbsp; I'm a software developer at Compass.UOL working on production of a points redemption app with React Native.<br/><br/>
 🎓&nbsp;I'm graduated in Computer Science at UNESP.<br/><br/>
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
-🌱 &nbsp;I'm learning UI/UX, Vue, Kotlin and Swift.<br /><br />
-🎮 &nbsp;I like to play video games and watch a good series in my free time.<br/><br/>
+🌱 &nbsp;I'm learning Mithril.js, Kotlin and Java Spring.<br /><br />
+🎮 &nbsp;I like to play video games and watch a good tv show in my free time.<br/><br/>
 ✉️ &nbsp;You can contact me through <a target="_blank" href="mailto:contato@murilopereira.dev.br">contato@murilopereira.dev.br</a>. I'll try to respond ASAP!<br/><br/>
 📄 &nbsp;My resume is avaliable <a target="_blank" href="https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf">here</a> and my portifolio can be checked <a target="_blank" href="https://murilopereira.dev.br">here</a>.
 <br/><br/>
 
 ## 🛠 &nbsp;Skills
 
-#### Stacks
+#### Stacks/Frameworks
 ![Flutter](https://img.shields.io/badge/-Flutter-133f66?style=flat&logo=Flutter&logoColor=42A5F5)&nbsp;
 ![ReactJS](https://img.shields.io/badge/-ReactJS-133f66?style=flat&logo=React)&nbsp;
 ![React Native](https://img.shields.io/badge/-React%20Native-133f66?style=flat&logo=React)&nbsp;
 ![SASS](https://img.shields.io/badge/-SASS-133f66?style=flat&logo=sass)&nbsp;
+![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-133f66?style=flat&logo=tailwindcss)&nbsp;
 ![Vue](https://img.shields.io/badge/-Vue-133f66?style=flat&logo=vuedotjs)&nbsp;
+![Mithril.js](https://img.shields.io/badge/-Mithril.js-133f66?style=flat)&nbsp;
 ![Laravel](https://img.shields.io/badge/-Laravel-133f66?style=flat&logo=laravel)&nbsp;
 ![Magento](https://img.shields.io/badge/-Magento-133f66?style=flat&logo=magento)&nbsp;
 ![NodeJS](https://img.shields.io/badge/-NodeJS-133f66?style=flat&logo=nodedotjs)&nbsp;  
@@ -24,6 +26,7 @@
 #### Languages
 ![JavaScript](https://img.shields.io/badge/-JavaScript-133f66?style=flat&logo=javascript)&nbsp;
 ![Typescript](https://img.shields.io/badge/-Typescript-133f66?style=flat&logo=typescript)&nbsp;
+![Kotlin](https://img.shields.io/badge/-Kotlin-133f66?style=flat&logo=kotlin)&nbsp;
 ![PHP](https://img.shields.io/badge/-PHP-133f66?style=flat&logo=php)&nbsp;
 ![C#](https://img.shields.io/badge/-C%23-133f66?style=flat&logo=csharp)&nbsp;
 ![HTML](https://img.shields.io/badge/-HTML-133f66?style=flat&logo=HTML5)&nbsp;
@@ -42,6 +45,8 @@
 #### Testing
 ![Jest](https://img.shields.io/badge/-Jest-133f66?style=flat&logo=jest)&nbsp;
 ![PHP Unit](https://img.shields.io/badge/-PHP%20Unit-133f66?style=flat)&nbsp;
+![Appium](https://img.shields.io/badge/-Appium-133f66?style=flat)&nbsp;
+![Cypress](https://img.shields.io/badge/-cypress-%23133f66?style=flat&logo=cypress)
 
 ### 📫 &nbsp; How to reach me:
 
