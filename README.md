@@ -1,6 +1,6 @@
 ## 👨🏻‍💻 &nbsp; **About Me**
 <br/>
-🧔🏻 &nbsp; I'm a software developer at Compass.UOL working on production of a points redemption app with React Native.<br/><br/>
+🧔🏻 &nbsp; I'm a front-end engineer focused on Mobile. Now I'm in a new moment of my life, moving abroad and changing company.<br/><br/>
 🎓&nbsp;I'm graduated in Computer Science at UNESP.<br/><br/>
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
 🌱 &nbsp;I'm learning Mithril.js, Kotlin and Java Spring.<br /><br />
