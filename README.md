@@ -1,6 +1,6 @@
 ## 👨🏻‍💻 &nbsp; **About Me**
 <br/>
-🧔🏻 &nbsp; I'm a front-end engineer focused on Mobile. Now I'm in a new moment of my life, moving abroad and changing company.<br/><br/>
+🧔🏻 &nbsp; I'm a front-end engineer focused on Mobile. Currently I'm working as a Software Engineer at Tuta helping to build a more secure internet for everyone.<br/><br/>
 🎓&nbsp;I'm graduated in Computer Science at UNESP.<br/><br/>
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
 🌱 &nbsp;I'm learning Mithril.js, Kotlin and Java Spring.<br /><br />
@@ -54,5 +54,4 @@
 
 
 <a target="_blank" href="https://www.linkedin.com/in/mrochapereira/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white"/></a> &nbsp;
-<a target="_blank" href="https://wa.me/5518981892681"><img alt="WhatsApp" src="https://img.shields.io/badge/Whatsapp-25D366?style=flat&logo=whatsapp&logoColor=white" /></a> &nbsp;
 <a target="_blank" href="mailto:contato@murilopereira.dev.br"><img src="https://img.shields.io/badge/-@%20EMail-133f66?style=flat&logo=mail"/></a> &nbsp;
