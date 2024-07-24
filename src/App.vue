@@ -22,24 +22,18 @@ import "vue-toastification/dist/index.css";
 export default defineComponent({
   name: "App",
   methods: {
-    loadContent: async () => {
+    loadPageContent: async () => {
       const contentResponse = await axios.get(
         "https://api.murilopereira.dev.br/api/v1/content"
       );
 
-      const projectsResponse = await axios.get(
-        "https://api.murilopereira.dev.br/api/v1/projects"
-      );
-
-      const experiencesResponse = await axios.get(
-        "https://api.murilopereira.dev.br/api/v1/experiences"
-      );
-
+      content.setContent(contentResponse.data.data);
+    },
+    loadFormations: async () => {
       const formationsResponse = await axios.get(
         "https://api.murilopereira.dev.br/api/v1/formations"
       );
 
-      content.setContent(contentResponse.data.data);
       content.setFormations(
         formationsResponse.data.data.map((elem) => {
           return {
@@ -49,9 +43,20 @@ export default defineComponent({
           };
         })
       );
+    },
+    loadProjects: async () => {
+      const projectsResponse = await axios.get(
+        "https://api.murilopereira.dev.br/api/v1/projects"
+      );
       content.setProjects(projectsResponse.data.data);
+    },
+    loadExperiences: async () => {
+      const experiencesResponse = await axios.get(
+        "https://api.murilopereira.dev.br/api/v1/experiences"
+      );
+
       content.setExperiences(
-        experiencesResponse.data.data.map((elem) => {
+        experiencesResponse.data.data.reverse().map((elem) => {
           return {
             ...elem,
             start_date: new Date(elem.start_date.date),
@@ -63,12 +68,18 @@ export default defineComponent({
           };
         })
       );
-      content.setContentLoaded();
     },
   },
   beforeMount() {
     analytics.logScreenView("Home");
-    this.loadContent();
+    Promise.all([
+      this.loadPageContent(),
+      this.loadFormations(),
+      this.loadProjects(),
+      this.loadExperiences(),
+    ]).then(() => {
+      content.setContentLoaded();
+    });
   },
   data() {
     return {

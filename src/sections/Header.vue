@@ -168,6 +168,7 @@ export default defineComponent({
 @media only screen and (min-width: 2000px)
   .H-Container
     .H-Body
+      padding-bottom: 40px
       .H-Info
         img
           margin-left: -22.5%
