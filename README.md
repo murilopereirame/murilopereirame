@@ -5,7 +5,7 @@
 💡&nbsp;My undergraduate thesis aims to analyze the impact of pre-processing images before use them to train a CNN.<br/><br/>
 🌱 &nbsp;I'm learning Rust at the moment.<br /><br />
 🎮 &nbsp;I like to play video games and watch a good tv show in my free time.<br/><br/>
-✉️ &nbsp;You can contact me through <a target="_blank" href="mailto:contato@murilopereira.dev.br">contato@murilopereira.dev.br</a>. I'll try to respond ASAP!<br/><br/>
+✉️ &nbsp;You can contact me through <a target="_blank" href="mailto:contato@murilopereira.dev.br">contato@murilopereira.dev.br</a>. I'll try to reply ASAP!<br/><br/>
 📄 &nbsp;My resume is avaliable <a target="_blank" href="https://murilopereira.dev.br/downloads/murilo_pereira_resume.pdf">here</a> and my portifolio can be checked <a target="_blank" href="https://murilopereira.dev.br">here</a>.
 <br/><br/>
 
