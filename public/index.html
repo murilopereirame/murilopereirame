@@ -21,8 +21,10 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+      fetchpriority="high"
     />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -35,5 +37,6 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
   </body>
 </html>

@@ -107,8 +107,9 @@ export const content = reactive({
   formations: [] as IFormation[],
   content: {
     header: {
-      description: "",
-      cta: "",
+      description:
+        "Realizo projetos e serviços relacionados a <span>Back-End e Front-End.</span> Participo de todas as fases de um projeto com muita dedicação. Garanto a usabilidade e execução por meio das linguagens de programação.",
+      cta: "Vamos desenvolver um projeto <span>juntos</span>?",
     },
     projects: {
       title: "",
@@ -130,5 +131,5 @@ export const content = reactive({
       linkedin: "",
     },
   } as IContent,
-  loaded: false,
+  loaded: true,
 });
