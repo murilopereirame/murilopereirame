@@ -63,6 +63,7 @@ export default defineComponent({
   .experience-techs
     display: flex
     gap: 8px
+    flex-wrap: wrap
     margin-top: 20px
 
 @media only screen and (min-width: 1360px)

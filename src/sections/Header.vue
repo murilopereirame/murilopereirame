@@ -3,14 +3,13 @@
     <div class="H-Container">
       <NavbarComponent />
       <div class="H-Body">
-        <ProfilePicture />
         <div class="H-Info">
           <img src="../assets/logo.svg" alt="Logo Murilo Pereira" />
           <p v-html="content.content.header.description"></p>
-          <div class="H-CTA">
+          <a href="#contato" class="H-CTA">
             <svg-icon :path="path" type="mdi" />
             <a><p v-html="content.content.header.cta"></p></a>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -20,7 +19,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavbarComponent from "../components/Navbar.vue";
-import ProfilePicture from "@/components/ProfilePicture.vue";
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiLightbulbOnOutline } from "@mdi/js";
 import { content } from "@/store";
@@ -30,7 +28,6 @@ export default defineComponent({
   components: {
     SvgIcon,
     NavbarComponent,
-    ProfilePicture,
   },
   data() {
     return {
@@ -53,15 +50,42 @@ export default defineComponent({
       color: $primary
       font-weight: 300
       text-align: left
-      margin: 0
-      padding: 40px 35px 68px
-      font-size: 1.1rem
+      margin: 2em 0
+      text-align: center
+      padding: 28px 28px 68px
+      font-size: 1.3rem
       span
         font-weight: bold
     img
       display: none
     .H-CTA
-      display: none
+      display: flex
+      align-items: center
+      justify-content: center
+      transform: translateY(50%)
+      background-color: $cta-background
+      color: $text-primary
+      padding: 8px 0 8px 0
+      border-top-right-radius: 50px
+      border-bottom-right-radius: 50px
+      border-top-left-radius: 15px
+      border-bottom-left-radius: 50px
+      color: $primary
+      margin: 0 48px
+      text-decoration: none
+      cursor: pointer
+      a
+        width: 50%
+        p
+          text-align: center
+          font-weight: bold
+          font-size: 0.9em
+          padding: 0
+          padding-right: 16px
+      svg
+        margin-right: 12px
+        width: 42px
+        height: 42px
 
 @media only screen and (min-width: 668px)
   .H-Container
@@ -70,100 +94,68 @@ export default defineComponent({
     .H-Body
       display: flex
       align-items: center
+      justify-content: center
       padding: 0 3rem
-      margin-bottom: -12.25vh
       .H-Info
         display: flex
         flex-direction: column
-        align-items: flex-start
+        align-items: center
+        position: relative
         > p
-          padding: 40px 0px 10px 30px
+          padding: 0 10em
           font-size: .9rem
+          padding: 46px 68px
         img
           display: initial
           position: relative
           width: 20rem
-          margin-left: -7.5vw
-        .H-CTA
-          display: flex
-          align-items: center
-          justify-content: flex-start
-          padding: 20px 0px 15px 30px
-          color: $text-primary
+      .H-CTA
+        transform: translateY(50%)
+        padding: 8px 0 8px 0
+        a
+          width: 50%
           p
-            text-align: left
-            span
-              font-weight: bold
-          svg
-            margin-right: 15px
-            width: 56px
-            height: 56px
+            text-align: center
+            font-size: 1.2em
+            padding: 0
+            padding-right: 16px
+        svg
+          margin-right: 12px
+          width: 56px
+          height: 56px
+
 
 @media only screen and (min-width: 912px)
   .H-Container
     .H-Body
       padding: 0 5rem
-      margin-bottom: -8vh
       .H-Info
         > p
           font-size: 1rem
         img
           width: 25rem
-          margin-left: -7.5vw
-        .H-CTA
-          display: flex
-          align-items: center
-          justify-content: flex-start
-          padding: 20px 0px 15px 30px
-          color: $text-primary
-          p
-            text-align: left
-            span
-              font-weight: bold
-          svg
-            margin-right: 15px
-            width: 56px
-            height: 56px
 
 @media only screen and (min-width: 1024px)
   .H-Container
     .H-Body
       padding: 0 10rem
-      margin-bottom: -16vh
       .H-Info
         > p
-          padding: 40px 0px 10px 30px
-          font-size: 1rem
+          padding: 0 6em
+          font-size: 1.4rem
         img
           width: 420px
-          margin-left: -8.5vw
-        .H-CTA
-          padding: 20px 0px 15px 30px
-          p
-            text-align: left
-            span
-              font-weight: bold
-          svg
-            margin-right: 15px
-            width: 56px
-            height: 56px
 @media only screen and (min-width: 1360px)
   .H-Container
     .H-Body
       padding: 0 20.5rem
-      margin-bottom: -15vh
-      .H-Info
-        img
-          margin-left: -7vw
 @media only screen and (min-width: 1920px)
   .H-Container
     max-width: 1920px
     .H-Body
       padding: 0 25%
-      margin-bottom: -15vh
       .H-Info
         img
-          margin-left: -6.25vw
           width: 540px
 @media only screen and (min-width: 2000px)
   .H-Container

@@ -77,7 +77,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import * as icons from "@mdi/js";
+import { mdiSchoolOutline, mdiTranslate } from "@mdi/js";
 import DegreeComponent from "../components/Degree.vue";
 import SkillComponent from "../components/Skill.vue";
 import ExperienceCompoent from "../components/Experience.vue";
@@ -93,7 +93,7 @@ export default defineComponent({
   name: "FormationSection",
   data() {
     return {
-      icons,
+      icons: { mdiSchoolOutline, mdiTranslate },
       content,
       breakpoints: {
         320: {
