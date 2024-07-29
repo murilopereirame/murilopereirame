@@ -161,7 +161,4 @@ export default defineComponent({
   .H-Container
     .H-Body
       padding-bottom: 40px
-      .H-Info
-        img
-          margin-left: -22.5%
 </style>
