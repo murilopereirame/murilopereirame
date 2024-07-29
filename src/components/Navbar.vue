@@ -11,26 +11,26 @@
       <NavbarItem
         :closeNav="closeNav"
         :isOpen="!hideNavItems"
-        title="Projetos"
+        :title="content.content.menu.projects"
         href="#projetos"
       />
       <NavbarItem
         :closeNav="closeNav"
         :isOpen="!hideNavItems"
-        title="Experiência"
+        :title="content.content.menu.exp"
         href="#experiencia"
       />
       <NavbarItem
         :closeNav="closeNav"
         :isOpen="!hideNavItems"
-        title="Contato"
+        :title="content.content.menu.contact"
         href="#contato"
       />
     </div>
   </nav>
 </template>
 <script lang="ts">
-import { analytics } from "@/store";
+import { analytics, content } from "@/store";
 import { defineComponent } from "vue";
 import NavbarItem from "./NavItem.vue";
 
@@ -39,6 +39,7 @@ export default defineComponent({
   data() {
     return {
       hideNavItems: true,
+      content,
     };
   },
   methods: {

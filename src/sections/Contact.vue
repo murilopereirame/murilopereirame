@@ -10,14 +10,14 @@
           type="text"
           v-model="form.name"
           id="name"
-          placeholder="Nome"
+          :placeholder="content.content.form.name"
           name="name"
         />
         <label v-if="errors.email" for="email">Email inválido</label>
         <input
           :class="{ 'input-error': errors.email }"
           id="email"
-          placeholder="E-mail"
+          :placeholder="content.content.form.email"
           v-model="form.email"
           name="email"
           type="email"
@@ -26,7 +26,7 @@
         <textarea
           :class="{ 'input-error': errors.message }"
           id="message"
-          placeholder="Mensagem"
+          :placeholder="content.content.form.message"
           v-model="form.message"
           name="mensagem"
         ></textarea>
@@ -38,7 +38,11 @@
             data-action="submit"
             @click="submit"
             type="submit"
-            :value="sending ? 'Enviando...' : 'Enviar'"
+            :value="
+              sending
+                ? content.content.form.button.sending
+                : content.content.form.button.send
+            "
           />
         </div>
       </form>

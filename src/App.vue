@@ -17,21 +17,27 @@ import FooterSection from "./sections/Footer.vue";
 import LoadingOverlay from "./sections/LoadingOverlay.vue";
 import axios from "axios";
 import { analytics, content } from "./store";
+
 import "vue-toastification/dist/index.css";
 
 export default defineComponent({
   name: "App",
   methods: {
     loadPageContent: async () => {
-      const contentResponse = await axios.get(
-        "https://api.murilopereira.dev.br/api/v1/content"
-      );
+      const browserLocale = navigator.languages[0] ?? "en";
+      const urlLocale =
+        window.location.pathname.split("/").filter((str) => str !== "")?.[0] ??
+        "en";
 
-      content.setContent(contentResponse.data.data);
+      if ((urlLocale && urlLocale === "pt") || browserLocale === "pt-BR") {
+        return content.setLocale("pt");
+      }
+
+      content.setLocale("en");
     },
     loadFormations: async () => {
       const formationsResponse = await axios.get(
-        "https://api.murilopereira.dev.br/api/v1/formations"
+        `https://api.murilopereira.dev.br/api/v1/formations?lang=${content.locale}`
       );
 
       content.setFormations(
@@ -52,7 +58,7 @@ export default defineComponent({
     },
     loadExperiences: async () => {
       const experiencesResponse = await axios.get(
-        "https://api.murilopereira.dev.br/api/v1/experiences"
+        `https://api.murilopereira.dev.br/api/v1/experiences?lang=${content.locale}`
       );
 
       content.setExperiences(
@@ -72,8 +78,10 @@ export default defineComponent({
   },
   beforeMount() {
     analytics.logScreenView("Home");
+
+    this.loadPageContent();
+
     Promise.all([
-      this.loadPageContent(),
       this.loadFormations(),
       this.loadProjects(),
       this.loadExperiences(),

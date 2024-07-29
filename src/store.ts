@@ -1,6 +1,6 @@
 import { Analytics, logEvent as fbLog } from "firebase/analytics";
 import { reactive } from "vue";
-
+import { en, pt } from "./i18n";
 interface IHeader {
   description: string;
   cta: string;
@@ -18,6 +18,22 @@ interface IFooter {
   linkedin: string;
 }
 
+interface Menu {
+  projects: string;
+  exp: string;
+  contact: string;
+}
+
+interface Form {
+  name: string;
+  email: string;
+  message: string;
+  button: {
+    sending: string;
+    send: string;
+  };
+}
+
 interface IContent {
   header: IHeader;
   projects: ISection;
@@ -25,6 +41,8 @@ interface IContent {
   skills: ISkill[];
   contact: ISection;
   footer: IFooter;
+  menu: Menu;
+  form: Form;
 }
 
 interface ITech {
@@ -102,14 +120,23 @@ export const content = reactive({
   setContentLoaded() {
     this.loaded = true;
   },
+  setLocale(locale: "en" | "pt") {
+    this.locale = locale;
+
+    if (locale === "en") {
+      return this.setContent(en);
+    }
+
+    this.setContent(pt);
+  },
+  locale: "en",
   projects: [] as IProject[],
   experiences: [] as IExperience[],
   formations: [] as IFormation[],
   content: {
     header: {
-      description:
-        "Realizo projetos e serviços relacionados a <span>Back-End e Front-End.</span> Participo de todas as fases de um projeto com muita dedicação. Garanto a usabilidade e execução por meio das linguagens de programação.",
-      cta: "Vamos desenvolver um projeto <span>juntos</span>?",
+      description: "",
+      cta: "",
     },
     projects: {
       title: "",
@@ -129,6 +156,20 @@ export const content = reactive({
       email: "",
       whatsapp: "",
       linkedin: "",
+    },
+    menu: {
+      projects: "",
+      exp: "",
+      contact: "",
+    },
+    form: {
+      name: "",
+      email: "",
+      message: "",
+      button: {
+        sending: "",
+        send: "",
+      },
     },
   } as IContent,
   loaded: true,

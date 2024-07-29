@@ -4,7 +4,6 @@ import App from "./App.vue";
 import Toast from "vue-toastification";
 import { getAnalytics } from "firebase/analytics";
 import { analytics } from "./store";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAnxakZXjDIeeTponyxLuBTRSq3BDdz2C4",
   authDomain: "portifolio-78cdd.firebaseapp.com",
