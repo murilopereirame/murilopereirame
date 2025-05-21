@@ -40,4 +40,4 @@ Olá! Sou Desenvolvedor Fullstack formado pela UNESP e atualmente trabalho na Tu
 ![Docker](https://img.shields.io/badge/-Docker-133f66?style=flat&logo=docker)&nbsp;
 ![Jest](https://img.shields.io/badge/-Jest-133f66?style=flat&logo=jest)&nbsp;
 ![PHP Unit](https://img.shields.io/badge/-PHP%20Unit-133f66?style=flat)&nbsp;
-![JUnit](https://img.shields.io/badge/-PHP%20Unit-133f66?style=flat)&nbsp;
+![JUnit](https://img.shields.io/badge/-JUnit-133f66?style=flat)&nbsp;
