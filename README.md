@@ -3,7 +3,7 @@
 Hello! I'm a Fullstack Engineer graduated in Computer Science at UNESP and currently working at Tuta contributing to build a more secure internet for everyone.  
 
 ✉️ &nbsp;You can contact me through [hello@murilopereira.dev](mailto:hello@murilopereira.dev).  
-📄 &nbsp;My resume is avaliable [here](https://murilopereira.dev/downloads/murilo_pereira_resume.pdf) and my portifolio can be checked [here](https://murilopereira.dev).
+📄 &nbsp;My resume is available [here](https://murilopereira.dev/downloads/murilo_pereira_resume.pdf) and my portfolio can be checked [here](https://murilopereira.dev).
 
 ---
 
@@ -17,7 +17,7 @@ Hallo! Ich bin Fullstack Ingenieur, habe meinen Abschluss an der UNESP gemacht u
 Olá! Sou Desenvolvedor Fullstack formado pela UNESP e atualmente trabalho na Tuta, contribuindo na construção de uma internet mais segura para todos.  
 
 ✉️ &nbsp; Você pode entrar em contato comigo através do email [hello@murilopereira.dev](mailto:hello@murilopereira.dev).  
-📄 &nbsp; Meu currículo pode ser baixado [aqui](https://murilopereira.dev/downloads/murilo_pereira_resume_pt.pdf) e você pode consultar meu portifólio [aqui](https://murilopereira.dev).
+📄 &nbsp; Meu currículo pode ser baixado [aqui](https://murilopereira.dev/downloads/murilo_pereira_resume_pt.pdf) e você pode consultar meu portfólio [aqui](https://murilopereira.dev).
 
 ## 🛠 &nbsp;Skills
 
