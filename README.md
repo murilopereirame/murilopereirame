@@ -1,6 +1,6 @@
 ## 👨🏻‍💻 &nbsp; **About Me** / **Über Mich** / **Sobre Mim**
 <br/>
-Hello! I'm a Fullstack Engineer graduated in Computer Science at UNESP and currently working at Ostrom contributing to make energy better through efficient and sustainable backend solutions. 
+Hello! I'm a Fullstack Engineer graduated in Computer Science at UNESP and currently working at Ostrom contributing to make energy better through efficient and sustainable backend solutions.  
 
 ✉️ &nbsp;You can contact me through [hello@murilopereira.dev](mailto:hello@murilopereira.dev).  
 📄 &nbsp;My resume is available [here](https://murilopereira.dev/downloads/murilo_pereira_resume.pdf) and my portfolio can be checked [here](https://murilopereira.dev).
